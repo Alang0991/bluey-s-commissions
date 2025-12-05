@@ -10,18 +10,12 @@
         /* LIGHT MODE */
         --bg: linear-gradient(180deg, #c9e9ff, #ffd6f4);
         --text: #2a2a2a;
-        --card-bg: #ffffffcc;
-        --section-bg: #ffffffaa;
         --accent: #4a79ff;
-        --shadow: rgba(0,0,0,0.1);
 
         /* DARK MODE */
         --bg-dark: linear-gradient(180deg, #1a1b3a, #3b157a);
         --text-dark: #e8e8ff;
-        --card-bg-dark: #1e1d3b;
-        --section-bg-dark: #29275a;
         --accent-dark: #9d79ff;
-        --shadow-dark: rgba(0,0,0,0.4);
     }
 
     body {
@@ -41,18 +35,18 @@
     .container {
         max-width: 900px;
         width: 92%;
-        background: var(--card-bg);
-        backdrop-filter: blur(6px);
+        background: rgba(255, 255, 255, 0.4); /* light frosted glass */
+        backdrop-filter: blur(10px);
         margin: 20px auto;
         padding: 20px;
         border-radius: 20px;
-        box-shadow: 0 0 20px var(--shadow);
+        box-shadow: 0 0 20px rgba(0,0,0,0.15);
         transition: 0.35s;
     }
 
     body.dark .container {
-        background: var(--card-bg-dark);
-        box-shadow: 0 0 20px var(--shadow-dark);
+        background: rgba(0, 0, 0, 0.3); /* dark frosted glass */
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
     }
 
     h1, h2 {
@@ -143,7 +137,7 @@ function toggleDarkMode() {
     <ul>
         <li><strong>No refunds</strong> once work has begun.</li>
         <li>You must legally <strong>own the base model</strong> and any assets you provide.</li>
-        <li>I do not work on <strong>hateful, harmful, unsafe or discriminatory content</strong>.</li>
+        <li>I do not work on <strong>hateful, harmful, unsafe, or discriminatory content</strong>.</li>
         <li>All commissions are strictly <strong>SFW</strong>.</li>
         <li>My work is intended for <strong>VRChat use only</strong>.</li>
         <li>Completion time varies depending on complexity, but I always work efficiently while keeping quality high.</li>
