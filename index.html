@@ -11,126 +11,211 @@
     --bg: linear-gradient(180deg, #c9e9ff, #ffd6f4);
     --text: #2a2a2a;
     --accent: #4a79ff;
+    --card: rgba(255,255,255,0.65);
+
     --bg-dark: linear-gradient(180deg, #1a1b3a, #3b157a);
     --text-dark: #e8e8ff;
     --accent-dark: #9d79ff;
+    --card-dark: rgba(0,0,0,0.35);
 }
+
 body {
     font-family: Arial, sans-serif;
     background: var(--bg);
-    color: var(--text);
     margin: 0;
+    color: var(--text);
     transition: .35s;
 }
-body.dark { background: var(--bg-dark); color: var(--text-dark); }
+
+body.dark {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+}
 
 .container {
     max-width: 900px;
     width: 94%;
     margin: 15px auto;
     padding: 20px;
-    background: rgba(255,255,255,.45);
+}
+
+.card {
+    background: var(--card);
     backdrop-filter: blur(10px);
     border-radius: 18px;
+    padding: 18px;
+    margin-bottom: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
-body.dark .container { background: rgba(0,0,0,.35); }
 
-h1,h2 { text-align:center; color:var(--accent); }
-body.dark h1, body.dark h2 { color:var(--accent-dark); }
+body.dark .card {
+    background: var(--card-dark);
+}
 
-details {
-    background: rgba(255,255,255,.6);
+h1, h2, h3 {
+    text-align: center;
+    color: var(--accent);
+}
+
+body.dark h1,
+body.dark h2,
+body.dark h3 {
+    color: var(--accent-dark);
+}
+
+p, li {
+    line-height: 1.7;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    text-align: center;
     padding: 14px;
     border-radius: 14px;
-    margin-bottom: 14px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
 }
-body.dark details { background: rgba(0,0,0,.35); }
 
-summary { font-weight:bold; font-size:1.05em; cursor:pointer; }
+body.dark .button {
+    background: var(--accent-dark);
+}
+
+.button.secondary {
+    background: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+}
+
+body.dark .button.secondary {
+    color: var(--accent-dark);
+    border-color: var(--accent-dark);
+}
 
 .toggle-dark {
-    position:fixed; bottom:18px; right:18px;
-    padding:14px 18px; border-radius:999px;
-    background:var(--accent); color:#fff;
-    border:none; cursor:pointer;
+    position: fixed;
+    bottom: 18px;
+    right: 18px;
+    padding: 14px 18px;
+    border-radius: 999px;
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.1em;
 }
-body.dark .toggle-dark { background:var(--accent-dark); }
 
-a.button {
-    display:inline-block;
-    padding:14px 26px;
-    border-radius:30px;
-    background:var(--accent);
-    color:#fff;
-    text-decoration:none;
-    font-weight:bold;
+body.dark .toggle-dark {
+    background: var(--accent-dark);
 }
-body.dark a.button { background:var(--accent-dark); }
+
+@media (max-width: 600px) {
+    h1 { font-size: 1.7em; }
+    h2 { font-size: 1.3em; }
+    .card { padding: 16px; }
+}
 </style>
 
 <script>
-function toggleDarkMode(){
- document.body.classList.toggle("dark");
- localStorage.setItem("theme",
- document.body.classList.contains("dark")?"dark":"light");
+function toggleDarkMode() {
+    document.body.classList.toggle("dark");
+    localStorage.setItem(
+        "theme",
+        document.body.classList.contains("dark") ? "dark" : "light"
+    );
 }
-window.onload=()=>{ if(localStorage.getItem("theme")==="dark")document.body.classList.add("dark"); };
+
+window.onload = () => {
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark");
+    }
+};
 </script>
 </head>
 
 <body>
-<button class="toggle-dark" onclick="toggleDarkMode()">🌙</button>
+
+<button class="toggle-dark" onclick="toggleDarkMode()" aria-label="Toggle dark mode">🌙</button>
 
 <div class="container">
-<h1>💙 Bluey's Avatar Commissions</h1>
-<p style="text-align:center;">SFW • Cozy • Beginner-Friendly</p>
 
-<p style="text-align:center;">
-<a class="button" href="#contact">Commission Me</a>
-</p>
+<div class="card">
+    <h1>💙 Bluey's Avatar Commissions</h1>
+    <p style="text-align:center;">SFW • Cozy • Beginner-Friendly</p>
 
-<details open>
-<summary>🐾 About</summary>
-<p>
-I’m <strong>Bluey</strong>, an 18+ VRChat avatar creator with ~2 years of experience in Unity and custom textures.
-I focus on clean, comfortable avatars that are easy to use.
-</p>
-</details>
+    <a class="button" href="#contact">✨ Commission Me ✨</a>
+</div>
 
-<details>
-<summary>💸 Pricing</summary>
-<ul>
-<li>Basic edits — £10–£20</li>
-<li>Custom textures — £25–£40</li>
-<li>Full re-texture — £55–£70</li>
-</ul>
-</details>
+<div class="card">
+    <h2>🐾 About Me</h2>
+    <p>
+        I’m <strong>Bluey</strong>, an 18+ VRChat avatar creator with around
+        <strong>2 years of experience</strong> in Unity and custom textures.
+        I focus on clean, comfortable avatars that are easy to use.
+    </p>
+</div>
 
-<details>
-<summary>💳 Payment</summary>
-<p>
-50% upfront is required to secure your slot.  
-Remaining 50% is paid before final files are sent.
-</p>
-</details>
+<div class="card">
+    <h2>💸 Pricing</h2>
+    <ul>
+        <li><strong>Basic edits:</strong> £10–£20</li>
+        <li><strong>Custom textures:</strong> £25–£40</li>
+        <li><strong>Full re-texture:</strong> £55–£70</li>
+    </ul>
+    <p>Exact pricing depends on complexity.</p>
+</div>
 
-<details>
-<summary>⚠️ Content Info</summary>
-<p>
-This page is for <strong>SFW commissions</strong>.  
-I also offer <strong>18+ / NSFW commissions</strong> on a separate page.
-</p>
-<p>
-<a href="nsfw.html">→ View NSFW Commission Page</a>
-</p>
-</details>
+<div class="card">
+    <h2>⚠️ Content Rules</h2>
+    <ul>
+        <li>This page is for <strong>SFW commissions</strong></li>
+        <li>Limited suggestive content may be accepted</li>
+        <li>No explicit or adult content here</li>
+        <li>Suggestive requests may cost slightly more</li>
+        <li>I reserve the right to refuse any request</li>
+    </ul>
 
-<details id="contact">
-<summary>💬 Contact</summary>
-<p><strong>Discord:</strong> puppo_boy</p>
-<p><a href="tos.html">View Terms of Service</a></p>
-</details>
+    <a class="button secondary" href="nsfw.html">🔞 View NSFW Commission Page</a>
+</div>
+
+<div class="card">
+    <h2>💳 Payment Policy</h2>
+    <p>
+        <strong>50% upfront payment</strong> is required to secure your slot.
+        The remaining 50% is paid once the commission is complete,
+        before final files are delivered.
+    </p>
+</div>
+
+<div class="card">
+    <h2>✨ How It Works</h2>
+    <ul>
+        <li>Contact me on Discord</li>
+        <li>Send references and ideas</li>
+        <li>Receive a quote</li>
+        <li>Pay 50% upfront</li>
+        <li>I begin work</li>
+        <li>Final payment</li>
+        <li>You receive your avatar</li>
+    </ul>
+</div>
+
+<div class="card" id="contact">
+    <h2>💬 Contact</h2>
+    <p><strong>Discord:</strong> puppo_boy</p>
+    <p>
+        <a href="tos.html">View Terms of Service</a>
+    </p>
+</div>
 
 </div>
+
 </body>
 </html>
