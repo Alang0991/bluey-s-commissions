@@ -4,243 +4,133 @@
 <meta charset="UTF-8">
 <title>Bluey's Avatar Commissions</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Affordable VRChat avatar commissions by Bluey. Custom textures, recolors, Unity setup, and Quest-friendly avatars.">
-
-<meta property="og:title" content="Bluey's Avatar Commissions">
-<meta property="og:description" content="Cute, affordable VRChat avatar commissions made with love 💙">
-<meta property="og:type" content="website">
+<meta name="description" content="VRChat avatar commissions by Bluey. SFW avatars, custom textures, Unity setup.">
 
 <style>
 :root {
     --bg: linear-gradient(180deg, #c9e9ff, #ffd6f4);
     --text: #2a2a2a;
     --accent: #4a79ff;
-
     --bg-dark: linear-gradient(180deg, #1a1b3a, #3b157a);
     --text-dark: #e8e8ff;
     --accent-dark: #9d79ff;
 }
-
 body {
     font-family: Arial, sans-serif;
     background: var(--bg);
-    margin: 0;
-    padding: 0;
     color: var(--text);
-    font-size: 16px;
-    transition: 0.35s ease;
+    margin: 0;
+    transition: .35s;
 }
-
-body.dark {
-    background: var(--bg-dark);
-    color: var(--text-dark);
-}
+body.dark { background: var(--bg-dark); color: var(--text-dark); }
 
 .container {
     max-width: 900px;
     width: 94%;
-    background: rgba(255,255,255,0.45);
-    backdrop-filter: blur(10px);
     margin: 15px auto;
     padding: 20px;
+    background: rgba(255,255,255,.45);
+    backdrop-filter: blur(10px);
     border-radius: 18px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.15);
 }
+body.dark .container { background: rgba(0,0,0,.35); }
 
-body.dark .container {
-    background: rgba(0,0,0,0.35);
-}
-
-h1, h2 {
-    text-align: center;
-    color: var(--accent);
-}
-
-body.dark h1,
-body.dark h2 {
-    color: var(--accent-dark);
-}
-
-p {
-    line-height: 1.7;
-}
+h1,h2 { text-align:center; color:var(--accent); }
+body.dark h1, body.dark h2 { color:var(--accent-dark); }
 
 details {
-    background: rgba(255,255,255,0.6);
+    background: rgba(255,255,255,.6);
+    padding: 14px;
     border-radius: 14px;
-    padding: 14px 16px;
     margin-bottom: 14px;
 }
+body.dark details { background: rgba(0,0,0,.35); }
 
-body.dark details {
-    background: rgba(0,0,0,0.35);
-}
-
-summary {
-    font-weight: bold;
-    font-size: 1.05em;
-    cursor: pointer;
-}
-
-details ul {
-    padding-left: 20px;
-    margin-top: 10px;
-}
+summary { font-weight:bold; font-size:1.05em; cursor:pointer; }
 
 .toggle-dark {
-    position: fixed;
-    bottom: 18px;
-    right: 18px;
-    background: var(--accent);
-    color: #fff;
-    border: none;
-    padding: 14px 18px;
-    border-radius: 999px;
-    font-size: 1.1em;
-    cursor: pointer;
-    box-shadow: 0 0 12px rgba(0,0,0,0.25);
-    z-index: 999;
+    position:fixed; bottom:18px; right:18px;
+    padding:14px 18px; border-radius:999px;
+    background:var(--accent); color:#fff;
+    border:none; cursor:pointer;
 }
+body.dark .toggle-dark { background:var(--accent-dark); }
 
-body.dark .toggle-dark {
-    background: var(--accent-dark);
+a.button {
+    display:inline-block;
+    padding:14px 26px;
+    border-radius:30px;
+    background:var(--accent);
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
 }
-
-.cta {
-    display: block;
-    text-align: center;
-    margin: 20px auto;
-}
-
-.cta a {
-    display: inline-block;
-    padding: 14px 26px;
-    border-radius: 30px;
-    background: var(--accent);
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-body.dark .cta a {
-    background: var(--accent-dark);
-}
-
-@media (max-width: 600px) {
-    body { font-size: 17px; }
-    h1 { font-size: 1.7em; }
-    h2 { font-size: 1.3em; }
-    .container { padding: 16px; }
-    summary { font-size: 1.1em; }
-}
+body.dark a.button { background:var(--accent-dark); }
 </style>
 
 <script>
-function toggleDarkMode() {
-    document.body.classList.toggle('dark');
-    localStorage.setItem(
-        'theme',
-        document.body.classList.contains('dark') ? 'dark' : 'light'
-    );
+function toggleDarkMode(){
+ document.body.classList.toggle("dark");
+ localStorage.setItem("theme",
+ document.body.classList.contains("dark")?"dark":"light");
 }
-
-window.onload = () => {
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark');
-    }
-};
+window.onload=()=>{ if(localStorage.getItem("theme")==="dark")document.body.classList.add("dark"); };
 </script>
 </head>
 
 <body>
-
-<button class="toggle-dark" onclick="toggleDarkMode()" aria-label="Toggle dark mode">🌙</button>
+<button class="toggle-dark" onclick="toggleDarkMode()">🌙</button>
 
 <div class="container">
+<h1>💙 Bluey's Avatar Commissions</h1>
+<p style="text-align:center;">SFW • Cozy • Beginner-Friendly</p>
 
-<h1>💙 Bluey's Avatar Commissions 💙</h1>
 <p style="text-align:center;">
-Cute • Affordable • Made With Love
+<a class="button" href="#contact">Commission Me</a>
 </p>
-
-<div class="cta">
-    <a href="#contact">✨ Commission Me ✨</a>
-</div>
 
 <details open>
-<summary>🐾 About Me</summary>
+<summary>🐾 About</summary>
 <p>
-Hiya! I’m <strong>Bluey</strong>, a furry avatar creator with nearly <strong>2 years of experience</strong>
-working in Unity and custom texture creation.
-I specialise in clean, beginner-friendly avatars for VRChat.
+I’m <strong>Bluey</strong>, an 18+ VRChat avatar creator with ~2 years of experience in Unity and custom textures.
+I focus on clean, comfortable avatars that are easy to use.
 </p>
-</details>
-
-<details>
-<summary>🌟 Why Choose Me?</summary>
-<ul>
-    <li>Affordable pricing</li>
-    <li>No extra fees for small tweaks</li>
-    <li>Unity-focused workflow</li>
-    <li>Friendly and communicative</li>
-    <li>Great for first-time buyers</li>
-</ul>
 </details>
 
 <details>
 <summary>💸 Pricing</summary>
 <ul>
-    <li><strong>Basic Edits:</strong> £10–£20</li>
-    <li><strong>Custom Textures:</strong> £25–£40</li>
-    <li><strong>Full Re-Texture:</strong> £55–£70</li>
+<li>Basic edits — £10–£20</li>
+<li>Custom textures — £25–£40</li>
+<li>Full re-texture — £55–£70</li>
 </ul>
+</details>
+
+<details>
+<summary>💳 Payment</summary>
 <p>
-Exact pricing depends on complexity.
+50% upfront is required to secure your slot.  
+Remaining 50% is paid before final files are sent.
 </p>
 </details>
 
 <details>
-<summary>⚠️ Content Rules</summary>
-<ul>
-    <li>I primarily create SFW avatars</li>
-    <li>Very limited suggestive elements may be accepted</li>
-    <li>No explicit, sexual, or adult content</li>
-    <li>Suggestive requests may cost slightly more</li>
-    <li>I reserve the right to refuse any request</li>
-</ul>
-</details>
-
-<details>
-<summary>💳 Payment Policy</summary>
+<summary>⚠️ Content Info</summary>
 <p>
-<strong>50% of the total price is required upfront</strong> to secure your commission slot.
-The remaining 50% is due once the avatar is complete, before files are delivered.
+This page is for <strong>SFW commissions</strong>.  
+I also offer <strong>18+ / NSFW commissions</strong> on a separate page.
 </p>
-</details>
-
-<details>
-<summary>✨ How It Works</summary>
-<ul>
-    <li>Contact me on Discord</li>
-    <li>Send references and ideas</li>
-    <li>Receive a quote</li>
-    <li>Pay 50% upfront</li>
-    <li>I begin work</li>
-    <li>Final payment is made</li>
-    <li>You receive your avatar</li>
-</ul>
+<p>
+<a href="nsfw.html">→ View NSFW Commission Page</a>
+</p>
 </details>
 
 <details id="contact">
 <summary>💬 Contact</summary>
 <p><strong>Discord:</strong> puppo_boy</p>
-<p><strong>VRChat:</strong> Bluey The Oreo</p>
-<p>
-<a href="tos.html">View Terms of Service</a>
-</p>
+<p><a href="tos.html">View Terms of Service</a></p>
 </details>
 
 </div>
-
 </body>
 </html>
