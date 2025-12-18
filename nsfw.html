@@ -4,8 +4,72 @@
 <meta charset="UTF-8">
 <title>Bluey's NSFW Commissions</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="shared.css">
+
+<style>
+#age-gate {
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+#age-box {
+  background:#111;
+  color:#fff;
+  padding:30px;
+  border-radius:20px;
+  max-width:400px;
+  text-align:center;
+}
+
+#age-box button {
+  margin-top:15px;
+}
+</style>
+
+<script>
+function confirmAge() {
+  localStorage.setItem("ageConfirmed","yes");
+  document.getElementById("age-gate").style.display="none";
+}
+
+window.onload = () => {
+  if (localStorage.getItem("theme")==="dark") {
+    document.body.classList.add("dark");
+  }
+  if (localStorage.getItem("ageConfirmed")==="yes") {
+    document.getElementById("age-gate").style.display="none";
+  }
+};
+
+function toggleDark(){
+ document.body.classList.toggle("dark");
+ localStorage.setItem("theme",
+ document.body.classList.contains("dark")?"dark":"light");
+}
+</script>
 </head>
+
 <body>
+
+<div id="age-gate">
+  <div id="age-box">
+    <h2>🔞 18+ Content Warning</h2>
+    <p>
+      This page contains information about NSFW avatar commissions.  
+      By continuing, you confirm that you are <strong>18 years or older</strong>.
+    </p>
+    <button class="button" onclick="confirmAge()">I am 18+</button>
+    <a class="button secondary" href="index.html">Go Back</a>
+  </div>
+</div>
+
+<button class="toggle" onclick="toggleDark()">🌙</button>
+
 <div class="container">
 
 <div class="card">
@@ -17,27 +81,34 @@
 <h2>⚠️ Rules</h2>
 <ul>
 <li>You must be 18+</li>
-<li>No illegal or harmful content</li>
-<li>No stolen assets</li>
+<li>No illegal, harmful, or non-consensual content</li>
+<li>No stolen or unlicensed assets</li>
 <li>I may refuse any request</li>
 </ul>
 </div>
 
 <div class="card">
 <h2>💷 Pricing</h2>
-<p>NSFW commissions usually cost more due to complexity.</p>
+<p>
+NSFW commissions generally cost <strong>more than SFW</strong>
+due to complexity and additional setup.
+Pricing is discussed privately.
+</p>
 </div>
 
 <div class="card">
 <h2>💬 Contact</h2>
-<p>Discuss privately on Discord.<br><strong>puppo_boy</strong></p>
+<p>
+Discuss NSFW commissions privately on Discord.<br>
+<strong>puppo_boy</strong>
+</p>
 </div>
 
 <div class="card">
-<a class="button" href="index.html">← Back to SFW</a>
+<a class="button" href="index.html">← Back to SFW Page</a>
 </div>
 
 </div>
+
 </body>
 </html>
-
