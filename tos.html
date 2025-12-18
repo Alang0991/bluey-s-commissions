@@ -2,258 +2,52 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Bluey's Avatar Commissions – Terms of Service</title>
+<title>Bluey's TOS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Terms of Service for Bluey's Avatar Commissions. Please read before commissioning.">
-
-<style>
-:root {
-    --bg: linear-gradient(180deg, #c9e9ff, #ffd6f4);
-    --text: #2a2a2a;
-    --accent: #4a79ff;
-
-    --bg-dark: linear-gradient(180deg, #1a1b3a, #3b157a);
-    --text-dark: #e8e8ff;
-    --accent-dark: #9d79ff;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background: var(--bg);
-    margin: 0;
-    padding: 0;
-    color: var(--text);
-    font-size: 16px;
-    transition: 0.35s ease;
-}
-
-body.dark {
-    background: var(--bg-dark);
-    color: var(--text-dark);
-}
-
-.container {
-    max-width: 900px;
-    width: 94%;
-    background: rgba(255,255,255,0.45);
-    backdrop-filter: blur(10px);
-    margin: 15px auto;
-    padding: 20px;
-    border-radius: 18px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.15);
-}
-
-body.dark .container {
-    background: rgba(0,0,0,0.35);
-}
-
-h1, h2 {
-    text-align: center;
-    color: var(--accent);
-}
-
-body.dark h1,
-body.dark h2 {
-    color: var(--accent-dark);
-}
-
-p {
-    line-height: 1.7;
-}
-
-details {
-    background: rgba(255,255,255,0.6);
-    border-radius: 14px;
-    padding: 14px 16px;
-    margin-bottom: 14px;
-}
-
-body.dark details {
-    background: rgba(0,0,0,0.35);
-}
-
-summary {
-    font-weight: bold;
-    font-size: 1.05em;
-    cursor: pointer;
-    outline: none;
-}
-
-details p,
-details ul {
-    margin-top: 10px;
-    font-size: 0.98em;
-}
-
-details ul {
-    padding-left: 20px;
-}
-
-.toggle-dark {
-    position: fixed;
-    bottom: 18px;
-    right: 18px;
-    background: var(--accent);
-    color: #fff;
-    border: none;
-    padding: 14px 18px;
-    border-radius: 999px;
-    font-size: 1.1em;
-    cursor: pointer;
-    box-shadow: 0 0 12px rgba(0,0,0,0.25);
-    z-index: 999;
-}
-
-body.dark .toggle-dark {
-    background: var(--accent-dark);
-}
-
-.back-link {
-    text-align: center;
-    margin-top: 25px;
-}
-
-.back-link a {
-    display: inline-block;
-    padding: 12px 22px;
-    border-radius: 30px;
-    background: var(--accent);
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-body.dark .back-link a {
-    background: var(--accent-dark);
-}
-
-@media (max-width: 600px) {
-    body { font-size: 17px; }
-    h1 { font-size: 1.7em; }
-    h2 { font-size: 1.3em; }
-    .container { padding: 16px; }
-    summary { font-size: 1.1em; }
-}
-</style>
-
-<script>
-function toggleDarkMode() {
-    document.body.classList.toggle('dark');
-    localStorage.setItem(
-        'theme',
-        document.body.classList.contains('dark') ? 'dark' : 'light'
-    );
-}
-
-window.onload = () => {
-    if (localStorage.getItem('theme') === 'dark') {
-        document.body.classList.add('dark');
-    }
-};
-</script>
+<link rel="stylesheet" href="shared.css">
 </head>
-
 <body>
-
-<button class="toggle-dark" onclick="toggleDarkMode()" aria-label="Toggle dark mode">🌙</button>
-
 <div class="container">
 
+<div class="card">
 <h1>📄 Terms of Service</h1>
-<h2>Bluey's Avatar Commissions</h2>
+<p style="text-align:center;">By commissioning me, you agree to these terms.</p>
+</div>
 
-<p style="text-align:center;">
-Please read carefully before commissioning.  
-By commissioning me, you confirm that you understand and agree to these terms.
-</p>
+<div class="card">
+<h2>💳 Payment</h2>
+<p>50% upfront required. Remaining 50% before delivery.</p>
+</div>
 
-<details open>
-<summary>💳 Payment Policy</summary>
-<p>
-Due to past issues, <strong>50% of the total commission price is required upfront</strong> before work begins.
-The remaining 50% must be paid once the commission is complete, before final files are delivered.
-</p>
-</details>
+<div class="card">
+<h2>💸 Refunds</h2>
+<p>Refunds depend on work completed. No guaranteed refunds once started.</p>
+</div>
 
-<details>
-<summary>💸 Refunds</summary>
-<p>
-Refunds are not guaranteed once work has started and depend on how much progress has been made.
-</p>
-</details>
+<div class="card">
+<h2>🧩 Asset Ownership</h2>
+<p>You must own all assets you provide.</p>
+</div>
 
-<details>
-<summary>🧩 Asset Ownership</summary>
-<p>
-You must legally own or have permission to use any base models or assets you provide.
-I am not responsible for problems caused by stolen or unlicensed assets.
-</p>
-</details>
+<div class="card">
+<h2>⚠️ Content Rules</h2>
+<p>SFW and limited NSFW allowed depending on page rules.</p>
+</div>
 
-<details>
-<summary>⚠️ Suggestive / NSFW Avatar Rules</summary>
-<p>
-I primarily create SFW avatars.  
-Very limited suggestive elements may be accepted on a case-by-case basis under the following rules:
-</p>
+<div class="card">
+<h2>🚫 Rights</h2>
+<p>I may refuse or cancel any commission.</p>
+</div>
 
-<ul>
-    <li>No explicit, sexual, or adult content</li>
-    <li>No graphic focus on body parts or fetish-related themes</li>
-    <li>No extreme proportions or exaggerated anatomy</li>
-    <li>All requests must stay within my personal comfort limits</li>
-    <li>Suggestive requests may cost slightly more due to additional time and care</li>
-    <li>I reserve the right to refuse or cancel any request at any stage</li>
-</ul>
+<div class="card">
+<h2>🎮 Usage</h2>
+<p>Personal VRChat use only. No resale or redistribution.</p>
+</div>
 
-<p>
-If you are unsure whether your idea fits these boundaries, please ask before commissioning.
-</p>
-</details>
-
-<details>
-<summary>💷 Pricing Adjustments</summary>
-<p>
-Prices may increase if a request requires extra complexity, revisions, or additional care.
-</p>
-</details>
-
-<details>
-<summary>🚫 Right to Refuse</summary>
-<p>
-I reserve the right to decline or cancel any commission that violates these terms or makes me uncomfortable.
-</p>
-</details>
-
-<details>
-<summary>🎮 Usage Rights</summary>
-<p>
-All work is intended for personal VRChat use only.
-Redistribution, resale, or claiming my work as your own is not permitted.
-</p>
-</details>
-
-<details>
-<summary>✏️ Revisions</summary>
-<p>
-Minor revisions are allowed.
-Major changes or redesigns may require an additional fee.
-</p>
-</details>
-
-<details>
-<summary>⏳ Completion Time</summary>
-<p>
-Completion time depends on complexity and queue size.
-I will always communicate progress or delays.
-</p>
-</details>
-
-<div class="back-link">
-    <a href="index.html">← Back to Commission Page</a>
+<div class="card">
+<a class="button" href="index.html">← Back</a>
 </div>
 
 </div>
-
 </body>
 </html>
