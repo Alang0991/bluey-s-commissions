@@ -4,254 +4,268 @@
 <meta charset="UTF-8">
 <title>Bluey's Avatar Commissions</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Affordable VRChat avatar commissions by Bluey. Custom textures, recolors, Unity setup, and Quest-friendly avatars.">
+
+<meta property="og:title" content="Bluey's Avatar Commissions">
+<meta property="og:description" content="Cute, affordable VRChat avatar commissions made with love 💙">
+<meta property="og:type" content="website">
 
 <style>
-    :root {
-        /* LIGHT MODE */
-        --bg: linear-gradient(180deg, #c9e9ff, #ffd6f4);
-        --text: #2a2a2a;
-        --card-bg: #ffffffcc;
-        --section-bg: #ffffffaa;
-        --accent: #4a79ff;
-        --shadow: rgba(0,0,0,0.1);
+:root {
+    --bg: linear-gradient(180deg, #c9e9ff, #ffd6f4);
+    --text: #2a2a2a;
+    --card-bg: #ffffffcc;
+    --section-bg: #ffffffaa;
+    --accent: #4a79ff;
+    --shadow: rgba(0,0,0,0.1);
 
-        /* DARK MODE */
-        --bg-dark: linear-gradient(180deg, #1a1b3a, #3b157a);
-        --text-dark: #e8e8ff;
-        --card-bg-dark: #1e1d3b;
-        --section-bg-dark: #29275a;
-        --accent-dark: #9d79ff;
-        --shadow-dark: rgba(0,0,0,0.4);
-    }
+    --bg-dark: linear-gradient(180deg, #1a1b3a, #3b157a);
+    --text-dark: #e8e8ff;
+    --card-bg-dark: #1e1d3b;
+    --section-bg-dark: #29275a;
+    --accent-dark: #9d79ff;
+    --shadow-dark: rgba(0,0,0,0.4);
+}
 
-    body {
-        font-family: Arial, sans-serif;
-        background: var(--bg);
-        margin: 0;
-        padding: 0;
-        color: var(--text);
-        transition: 0.35s ease;
-    }
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    margin: 0;
+    padding: 0;
+    color: var(--text);
+    transition: 0.35s ease;
+}
 
-    body.dark {
-        background: var(--bg-dark);
-        color: var(--text-dark);
-    }
+body.dark {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+}
 
-    .container {
-        max-width: 900px;
-        width: 92%;
-        background: var(--card-bg);
-        backdrop-filter: blur(6px);
-        margin: 20px auto;
-        padding: 20px;
-        border-radius: 20px;
-        box-shadow: 0 0 20px var(--shadow);
-        transition: 0.35s;
-    }
+.container {
+    max-width: 900px;
+    width: 92%;
+    background: var(--card-bg);
+    backdrop-filter: blur(6px);
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px var(--shadow);
+}
 
-    body.dark .container {
-        background: var(--card-bg-dark);
-        box-shadow: 0 0 20px var(--shadow-dark);
-    }
+body.dark .container {
+    background: var(--card-bg-dark);
+    box-shadow: 0 0 20px var(--shadow-dark);
+}
 
-    h1, h2, h3 {
-        text-align: center;
-        color: var(--accent);
-        transition: 0.35s;
-    }
+h1, h2, h3 {
+    text-align: center;
+    color: var(--accent);
+}
 
-    body.dark h1, body.dark h2, body.dark h3 {
-        color: var(--accent-dark);
-    }
+body.dark h1,
+body.dark h2,
+body.dark h3 {
+    color: var(--accent-dark);
+}
 
-    .section {
-        margin: 20px 0;
-        padding: 15px;
-        background: var(--section-bg);
-        border-radius: 15px;
-        transition: 0.35s;
-    }
+.section {
+    margin: 20px 0;
+    padding: 15px;
+    background: var(--section-bg);
+    border-radius: 15px;
+}
 
-    body.dark .section {
-        background: var(--section-bg-dark);
-    }
+body.dark .section {
+    background: var(--section-bg-dark);
+}
 
-    .price-box {
-        background: #e8f0ff;
-        padding: 15px;
-        margin: 15px 0;
-        border-left: 5px solid var(--accent);
-        border-radius: 10px;
-        transition: 0.35s;
-    }
+.price-box {
+    background: #e8f0ff;
+    padding: 15px;
+    margin: 15px 0;
+    border-left: 5px solid var(--accent);
+    border-radius: 10px;
+}
 
-    body.dark .price-box {
-        background: #2a2b57;
-        border-color: var(--accent-dark);
-    }
+body.dark .price-box {
+    background: #2a2b57;
+    border-color: var(--accent-dark);
+}
 
-    .price-box:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 14px var(--shadow);
-    }
+ul {
+    line-height: 1.6;
+    padding-left: 20px;
+}
 
-    body.dark .price-box:hover {
-        box-shadow: 0 6px 14px var(--shadow-dark);
-    }
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
 
-    ul {
-        line-height: 1.6;
-        padding-left: 20px;
-    }
+body.dark a {
+    color: var(--accent-dark);
+}
 
-    .footer {
-        text-align: center;
-        margin-top: 30px;
-        padding: 15px;
-    }
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+}
 
-    /* DARK MODE BUTTON */
-    .toggle-dark {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: var(--accent);
-        color: #fff;
-        border: none;
-        padding: 12px 18px;
-        border-radius: 50px;
-        font-size: 1em;
-        cursor: pointer;
-        box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        transition: 0.3s;
-        z-index: 999;
-    }
+.cta-btn {
+    display: block;
+    width: fit-content;
+    margin: 15px auto;
+    background: var(--accent);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-weight: bold;
+}
 
-    body.dark .toggle-dark {
-        background: var(--accent-dark);
-    }
+body.dark .cta-btn {
+    background: var(--accent-dark);
+}
 
-    @media (max-width: 600px) {
-        h1 { font-size: 1.7em; }
-        h2 { font-size: 1.3em; }
-        h3 { font-size: 1.1em; }
-        .container { padding: 15px; }
-        ul { padding-left: 15px; }
-        .price-box { padding: 12px; }
-        .toggle-dark {
-            padding: 10px 14px;
-            font-size: 0.9em;
-        }
-    }
+.toggle-dark {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+body.dark .toggle-dark {
+    background: var(--accent-dark);
+}
 </style>
 
 <script>
 function toggleDarkMode() {
     document.body.classList.toggle('dark');
+    localStorage.setItem(
+        'theme',
+        document.body.classList.contains('dark') ? 'dark' : 'light'
+    );
 }
-</script>
 
+window.onload = () => {
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark');
+    }
+};
+</script>
 </head>
 
 <body>
 
-<button class="toggle-dark" onclick="toggleDarkMode()">🌙</button>
+<button class="toggle-dark" onclick="toggleDarkMode()" aria-label="Toggle dark mode">🌙</button>
 
 <div class="container">
 
+<header>
     <h1>💙 Bluey's Avatar Commissions 💙</h1>
     <h3>Cute • Affordable • Made With Love</h3>
+    <a href="#contact" class="cta-btn">✨ Commission Me ✨</a>
+</header>
 
-    <div class="section">
-        <p>Hiya! I’m <strong>Bluey</strong>, a furry avatar creator with almost <strong>2 years of experience</strong> working in Unity and custom texture creation.</p>
-        <p>I specialise in <strong>clean, simple, beginner-friendly SFW avatars</strong>, perfect for anyone wanting a cozy and personalised VRChat look.</p>
-    </div>
+<div class="section">
+    <p>Hiya! I’m <strong>Bluey</strong>, a furry avatar creator with almost <strong>2 years of experience</strong> working in Unity and custom texture creation.</p>
+    <p>I specialise in <strong>clean, simple, beginner-friendly avatars</strong> for a cozy and personalised VRChat look.</p>
+</div>
 
-    <div class="section">
-        <h2>🌟 Why Choose Me?</h2>
+<div class="section">
+    <h2>🌟 Why Choose Me?</h2>
+    <ul>
+        <li>Affordable pricing</li>
+        <li>No extra fees for recolours or small tweaks</li>
+        <li>Unity-focused workflow</li>
+        <li>Friendly and communicative</li>
+        <li>Great for first-time buyers</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>💸 Price List</h2>
+
+    <div class="price-box">
+        <h3>🟦 Basic Edits — £10–£20</h3>
         <ul>
-            <li>💸 <strong>Affordable pricing</strong> — my highest tier is only £70</li>
-            <li>🎨 <strong>No extra fees</strong> for recolours or texture adjustments</li>
-            <li>🛠️ Unity-focused workflow (no heavy Blender work needed)</li>
-            <li>🤝 Friendly, patient, and communicative</li>
-            <li>⭐ Perfect for first-time buyers</li>
+            <li>Recolours</li>
+            <li>Texture fixes</li>
+            <li>Material adjustments</li>
+            <li>Minor Unity setup</li>
         </ul>
     </div>
 
-    <div class="section">
-        <h2>💸 Price List</h2>
-
-        <div class="price-box">
-            <h3>🟦 Basic Edits — £10–£20</h3>
-            <ul>
-                <li>Recolours</li>
-                <li>Texture fixes</li>
-                <li>Material adjustments</li>
-                <li>Small prefab add-ons</li>
-                <li>Minor Unity setup</li>
-            </ul>
-        </div>
-
-        <div class="price-box">
-            <h3>🩵 Custom Texture Work — £25–£40</h3>
-            <ul>
-                <li>Full custom texture sets</li>
-                <li>Patterns, markings, gradients, styles</li>
-                <li>Themes: pastel, neon, spooky, soft, cozy, etc.</li>
-            </ul>
-        </div>
-
-        <div class="price-box">
-            <h3>💙 Full Re-Texture Package — £55–£70</h3>
-            <ul>
-                <li>Full-body texture overhaul</li>
-                <li>Clothing + skin design</li>
-                <li>Stylised shading</li>
-                <li>Basic Unity toggles</li>
-                <li>Optimised VRChat setup</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2>✨ How My Commissions Work</h2>
+    <div class="price-box">
+        <h3>🩵 Custom Texture Work — £25–£40</h3>
         <ul>
-            <li>Contact me on Discord</li>
-            <li>Send references + any design ideas</li>
-            <li>I give you a price quote</li>
-            <li>I begin creating your avatar</li>
-            <li>You receive the Unity package + final files</li>
+            <li>Full custom textures</li>
+            <li>Patterns and markings</li>
+            <li>Pastel, neon, cozy styles</li>
         </ul>
     </div>
 
-    <div class="section">
-        <h2>❓ Frequently Asked Questions</h2>
+    <div class="price-box">
+        <h3>💙 Full Re-Texture Package — £55–£70</h3>
         <ul>
-            <li><strong>How long does a commission take?</strong><br>
-            It depends on the difficulty, but I always work as fast as possible while keeping the quality high.</li><br>
-
-            <li><strong>Do you accept PayPal?</strong><br>
-            Yes — I’m British, and PayPal is my main payment method.</li><br>
-
-            <li><strong>Can I request revisions?</strong><br>
-            Absolutely — I want you to be happy with the final result.</li><br>
-
-            <li><strong>Do you work with Quest avatars?</strong><br>
-            Yes! I always try my best to make everything Quest compatible.</li>
+            <li>Full-body re-texture</li>
+            <li>Clothing and skin design</li>
+            <li>Optimised VRChat setup</li>
         </ul>
     </div>
+</div>
 
-    <div class="section">
-        <h2>💬 Contact Me</h2>
-        <p><strong>Discord:</strong> puppo_boy</p>
-        <p><strong>VRChat:</strong> Bluey The Oreo</p>
-    </div>
+<div class="section">
+    <h2>🔒 Content Boundaries & Pricing</h2>
+    <ul>
+        <li>I mainly create SFW avatars</li>
+        <li>Very limited suggestive elements may be accepted on a case-by-case basis</li>
+        <li>Suggestive requests may cost slightly more due to additional time and care</li>
+        <li>No explicit, sexual, or adult content</li>
+        <li>I reserve the right to decline any request</li>
+    </ul>
+</div>
 
-    <div class="footer">
-        🐾 Thank you for checking out my commissions!<br>
-        <a href="tos.html" style="color: var(--accent);">View Terms of Service</a>
-    </div>
+<div class="section">
+    <h2>💳 Payment Policy</h2>
+    <ul>
+        <li>Due to past issues, <strong>50% of the total payment is required upfront</strong></li>
+        <li>The remaining 50% is due upon completion, before final files are sent</li>
+        <li>Payment is handled via PayPal</li>
+        <li>Refunds depend on how much work has been completed</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>✨ How It Works</h2>
+    <ul>
+        <li>Contact me on Discord</li>
+        <li>Send references and ideas</li>
+        <li>Receive a price quote</li>
+        <li><strong>Pay 50% upfront to secure your slot</strong></li>
+        <li>I begin work</li>
+        <li>Final payment is made</li>
+        <li>You receive the completed Unity package</li>
+    </ul>
+</div>
+
+<div class="section" id="contact">
+    <h2>💬 Contact Me</h2>
+    <p><strong>Discord:</strong> puppo_boy</p>
+    <p><strong>VRChat:</strong> Bluey The Oreo</p>
+</div>
+
+<footer class="footer">
+    🐾 Thank you for checking out my commissions!<br>
+    <a href="tos.html">View Terms of Service</a>
+</footer>
 
 </div>
 
