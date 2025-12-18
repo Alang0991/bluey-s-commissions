@@ -8,12 +8,10 @@
 
 <style>
 :root {
-    /* LIGHT MODE */
     --bg: linear-gradient(180deg, #c9e9ff, #ffd6f4);
     --text: #2a2a2a;
     --accent: #4a79ff;
 
-    /* DARK MODE */
     --bg-dark: linear-gradient(180deg, #1a1b3a, #3b157a);
     --text-dark: #e8e8ff;
     --accent-dark: #9d79ff;
@@ -25,6 +23,7 @@ body {
     margin: 0;
     padding: 0;
     color: var(--text);
+    font-size: 16px;
     transition: 0.35s ease;
 }
 
@@ -35,18 +34,17 @@ body.dark {
 
 .container {
     max-width: 900px;
-    width: 92%;
-    background: rgba(255, 255, 255, 0.4);
+    width: 94%;
+    background: rgba(255,255,255,0.45);
     backdrop-filter: blur(10px);
-    margin: 20px auto;
+    margin: 15px auto;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 18px;
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
 }
 
 body.dark .container {
-    background: rgba(0, 0, 0, 0.3);
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.35);
 }
 
 h1, h2 {
@@ -59,24 +57,50 @@ body.dark h2 {
     color: var(--accent-dark);
 }
 
-ul {
-    padding-left: 20px;
+p {
     line-height: 1.7;
+}
+
+details {
+    background: rgba(255,255,255,0.6);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+}
+
+body.dark details {
+    background: rgba(0,0,0,0.35);
+}
+
+summary {
+    font-weight: bold;
+    font-size: 1.05em;
+    cursor: pointer;
+    outline: none;
+}
+
+details p,
+details ul {
+    margin-top: 10px;
+    font-size: 0.98em;
+}
+
+details ul {
+    padding-left: 20px;
 }
 
 .toggle-dark {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 18px;
+    right: 18px;
     background: var(--accent);
     color: #fff;
     border: none;
-    padding: 12px 18px;
-    border-radius: 50px;
-    font-size: 1em;
+    padding: 14px 18px;
+    border-radius: 999px;
+    font-size: 1.1em;
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    transition: 0.3s;
+    box-shadow: 0 0 12px rgba(0,0,0,0.25);
     z-index: 999;
 }
 
@@ -87,28 +111,28 @@ body.dark .toggle-dark {
 .back-link {
     text-align: center;
     margin-top: 25px;
-    font-size: 1.1em;
 }
 
 .back-link a {
-    color: var(--accent);
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 30px;
+    background: var(--accent);
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
 }
 
 body.dark .back-link a {
-    color: var(--accent-dark);
+    background: var(--accent-dark);
 }
 
 @media (max-width: 600px) {
-    .container { padding: 15px; }
+    body { font-size: 17px; }
     h1 { font-size: 1.7em; }
     h2 { font-size: 1.3em; }
-    ul { padding-left: 15px; }
-    .toggle-dark {
-        padding: 10px 14px;
-        font-size: 0.9em;
-    }
+    .container { padding: 16px; }
+    summary { font-size: 1.1em; }
 }
 </style>
 
@@ -135,79 +159,101 @@ window.onload = () => {
 
 <div class="container">
 
-    <h1>📄 Terms of Service</h1>
-    <h2>Bluey's Avatar Commissions</h2>
+<h1>📄 Terms of Service</h1>
+<h2>Bluey's Avatar Commissions</h2>
 
-    <p style="text-align:center; margin-bottom:20px;">
-        These Terms of Service apply to all commissions.  
-        By commissioning me, you confirm that you have read and agree to the following:
-    </p>
+<p style="text-align:center;">
+Please read carefully before commissioning.  
+By commissioning me, you confirm that you understand and agree to these terms.
+</p>
 
-    <ul>
-        <li>
-            <strong>Payment Policy:</strong><br>
-            Due to past issues, <strong>50% of the total commission price is required upfront</strong> before work begins.
-            The remaining 50% must be paid upon completion, before final files are delivered.
-        </li>
+<details open>
+<summary>💳 Payment Policy</summary>
+<p>
+Due to past issues, <strong>50% of the total commission price is required upfront</strong> before work begins.
+The remaining 50% must be paid once the commission is complete, before final files are delivered.
+</p>
+</details>
 
-        <li>
-            <strong>Refunds:</strong><br>
-            Refunds are not guaranteed once work has begun and depend on how much progress has been made.
-        </li>
+<details>
+<summary>💸 Refunds</summary>
+<p>
+Refunds are not guaranteed once work has started and depend on how much progress has been made.
+</p>
+</details>
 
-        <li>
-            <strong>Asset Ownership:</strong><br>
-            You must legally own, or have permission to use, any base models or assets you provide.
-            I am not responsible for issues caused by stolen or unlicensed assets.
-        </li>
+<details>
+<summary>🧩 Asset Ownership</summary>
+<p>
+You must legally own or have permission to use any base models or assets you provide.
+I am not responsible for problems caused by stolen or unlicensed assets.
+</p>
+</details>
 
-        <li>
-            <strong>Content Boundaries:</strong><br>
-            I primarily work with SFW avatars.
-            Very limited suggestive elements may be accepted on a case-by-case basis.
-            <strong>No explicit, sexual, or adult content</strong> will be accepted.
-        </li>
+<details>
+<summary>⚠️ Suggestive / NSFW Avatar Rules</summary>
+<p>
+I primarily create SFW avatars.  
+Very limited suggestive elements may be accepted on a case-by-case basis under the following rules:
+</p>
 
-        <li>
-            <strong>Pricing Adjustments:</strong><br>
-            Requests involving limited suggestive elements may cost slightly more due to additional time and care.
-        </li>
+<ul>
+    <li>No explicit, sexual, or adult content</li>
+    <li>No graphic focus on body parts or fetish-related themes</li>
+    <li>No extreme proportions or exaggerated anatomy</li>
+    <li>All requests must stay within my personal comfort limits</li>
+    <li>Suggestive requests may cost slightly more due to additional time and care</li>
+    <li>I reserve the right to refuse or cancel any request at any stage</li>
+</ul>
 
-        <li>
-            <strong>Right to Refuse:</strong><br>
-            I reserve the right to decline or cancel any commission that makes me uncomfortable or violates these terms.
-        </li>
+<p>
+If you are unsure whether your idea fits these boundaries, please ask before commissioning.
+</p>
+</details>
 
-        <li>
-            <strong>Usage:</strong><br>
-            My work is intended for <strong>personal VRChat use only</strong>.
-            Redistribution, resale, or claiming my work as your own is not permitted.
-        </li>
+<details>
+<summary>💷 Pricing Adjustments</summary>
+<p>
+Prices may increase if a request requires extra complexity, revisions, or additional care.
+</p>
+</details>
 
-        <li>
-            <strong>Revisions:</strong><br>
-            Minor revisions are allowed to ensure you are happy with the final result.
-            Large changes or redesigns may require an additional fee.
-        </li>
+<details>
+<summary>🚫 Right to Refuse</summary>
+<p>
+I reserve the right to decline or cancel any commission that violates these terms or makes me uncomfortable.
+</p>
+</details>
 
-        <li>
-            <strong>Completion Time:</strong><br>
-            Completion time varies depending on complexity and queue size.
-            I will always communicate progress and delays if needed.
-        </li>
+<details>
+<summary>🎮 Usage Rights</summary>
+<p>
+All work is intended for personal VRChat use only.
+Redistribution, resale, or claiming my work as your own is not permitted.
+</p>
+</details>
 
-        <li>
-            <strong>Agreement:</strong><br>
-            Commissioning me means you fully agree to these Terms of Service.
-        </li>
-    </ul>
+<details>
+<summary>✏️ Revisions</summary>
+<p>
+Minor revisions are allowed.
+Major changes or redesigns may require an additional fee.
+</p>
+</details>
 
-    <div class="back-link">
-        <a href="index.html">← Back to Commission Page</a>
-    </div>
+<details>
+<summary>⏳ Completion Time</summary>
+<p>
+Completion time depends on complexity and queue size.
+I will always communicate progress or delays.
+</p>
+</details>
+
+<div class="back-link">
+    <a href="index.html">← Back to Commission Page</a>
+</div>
 
 </div>
 
 </body>
 </html>
-
