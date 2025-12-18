@@ -14,17 +14,11 @@
 :root {
     --bg: linear-gradient(180deg, #c9e9ff, #ffd6f4);
     --text: #2a2a2a;
-    --card-bg: #ffffffcc;
-    --section-bg: #ffffffaa;
     --accent: #4a79ff;
-    --shadow: rgba(0,0,0,0.1);
 
     --bg-dark: linear-gradient(180deg, #1a1b3a, #3b157a);
     --text-dark: #e8e8ff;
-    --card-bg-dark: #1e1d3b;
-    --section-bg-dark: #29275a;
     --accent-dark: #9d79ff;
-    --shadow-dark: rgba(0,0,0,0.4);
 }
 
 body {
@@ -33,6 +27,7 @@ body {
     margin: 0;
     padding: 0;
     color: var(--text);
+    font-size: 16px;
     transition: 0.35s ease;
 }
 
@@ -43,105 +38,100 @@ body.dark {
 
 .container {
     max-width: 900px;
-    width: 92%;
-    background: var(--card-bg);
-    backdrop-filter: blur(6px);
-    margin: 20px auto;
+    width: 94%;
+    background: rgba(255,255,255,0.45);
+    backdrop-filter: blur(10px);
+    margin: 15px auto;
     padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 20px var(--shadow);
+    border-radius: 18px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
 }
 
 body.dark .container {
-    background: var(--card-bg-dark);
-    box-shadow: 0 0 20px var(--shadow-dark);
+    background: rgba(0,0,0,0.35);
 }
 
-h1, h2, h3 {
+h1, h2 {
     text-align: center;
     color: var(--accent);
 }
 
 body.dark h1,
-body.dark h2,
-body.dark h3 {
+body.dark h2 {
     color: var(--accent-dark);
 }
 
-.section {
-    margin: 20px 0;
-    padding: 15px;
-    background: var(--section-bg);
-    border-radius: 15px;
+p {
+    line-height: 1.7;
 }
 
-body.dark .section {
-    background: var(--section-bg-dark);
+details {
+    background: rgba(255,255,255,0.6);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
 }
 
-.price-box {
-    background: #e8f0ff;
-    padding: 15px;
-    margin: 15px 0;
-    border-left: 5px solid var(--accent);
-    border-radius: 10px;
+body.dark details {
+    background: rgba(0,0,0,0.35);
 }
 
-body.dark .price-box {
-    background: #2a2b57;
-    border-color: var(--accent-dark);
-}
-
-ul {
-    line-height: 1.6;
-    padding-left: 20px;
-}
-
-a {
-    color: var(--accent);
-    text-decoration: none;
-}
-
-body.dark a {
-    color: var(--accent-dark);
-}
-
-.footer {
-    text-align: center;
-    margin-top: 30px;
-    padding: 15px;
-}
-
-.cta-btn {
-    display: block;
-    width: fit-content;
-    margin: 15px auto;
-    background: var(--accent);
-    color: #fff;
-    padding: 12px 24px;
-    border-radius: 30px;
+summary {
     font-weight: bold;
+    font-size: 1.05em;
+    cursor: pointer;
 }
 
-body.dark .cta-btn {
-    background: var(--accent-dark);
+details ul {
+    padding-left: 20px;
+    margin-top: 10px;
 }
 
 .toggle-dark {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 18px;
+    right: 18px;
     background: var(--accent);
     color: #fff;
     border: none;
-    padding: 12px 18px;
-    border-radius: 50px;
+    padding: 14px 18px;
+    border-radius: 999px;
+    font-size: 1.1em;
     cursor: pointer;
+    box-shadow: 0 0 12px rgba(0,0,0,0.25);
     z-index: 999;
 }
 
 body.dark .toggle-dark {
     background: var(--accent-dark);
+}
+
+.cta {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.cta a {
+    display: inline-block;
+    padding: 14px 26px;
+    border-radius: 30px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+body.dark .cta a {
+    background: var(--accent-dark);
+}
+
+@media (max-width: 600px) {
+    body { font-size: 17px; }
+    h1 { font-size: 1.7em; }
+    h2 { font-size: 1.3em; }
+    .container { padding: 16px; }
+    summary { font-size: 1.1em; }
 }
 </style>
 
@@ -168,104 +158,87 @@ window.onload = () => {
 
 <div class="container">
 
-<header>
-    <h1>💙 Bluey's Avatar Commissions 💙</h1>
-    <h3>Cute • Affordable • Made With Love</h3>
-    <a href="#contact" class="cta-btn">✨ Commission Me ✨</a>
-</header>
+<h1>💙 Bluey's Avatar Commissions 💙</h1>
+<p style="text-align:center;">
+Cute • Affordable • Made With Love
+</p>
 
-<div class="section">
-    <p>Hiya! I’m <strong>Bluey</strong>, a furry avatar creator with almost <strong>2 years of experience</strong> working in Unity and custom texture creation.</p>
-    <p>I specialise in <strong>clean, simple, beginner-friendly avatars</strong> for a cozy and personalised VRChat look.</p>
+<div class="cta">
+    <a href="#contact">✨ Commission Me ✨</a>
 </div>
 
-<div class="section">
-    <h2>🌟 Why Choose Me?</h2>
-    <ul>
-        <li>Affordable pricing</li>
-        <li>No extra fees for recolours or small tweaks</li>
-        <li>Unity-focused workflow</li>
-        <li>Friendly and communicative</li>
-        <li>Great for first-time buyers</li>
-    </ul>
-</div>
+<details open>
+<summary>🐾 About Me</summary>
+<p>
+Hiya! I’m <strong>Bluey</strong>, a furry avatar creator with nearly <strong>2 years of experience</strong>
+working in Unity and custom texture creation.
+I specialise in clean, beginner-friendly avatars for VRChat.
+</p>
+</details>
 
-<div class="section">
-    <h2>💸 Price List</h2>
+<details>
+<summary>🌟 Why Choose Me?</summary>
+<ul>
+    <li>Affordable pricing</li>
+    <li>No extra fees for small tweaks</li>
+    <li>Unity-focused workflow</li>
+    <li>Friendly and communicative</li>
+    <li>Great for first-time buyers</li>
+</ul>
+</details>
 
-    <div class="price-box">
-        <h3>🟦 Basic Edits — £10–£20</h3>
-        <ul>
-            <li>Recolours</li>
-            <li>Texture fixes</li>
-            <li>Material adjustments</li>
-            <li>Minor Unity setup</li>
-        </ul>
-    </div>
+<details>
+<summary>💸 Pricing</summary>
+<ul>
+    <li><strong>Basic Edits:</strong> £10–£20</li>
+    <li><strong>Custom Textures:</strong> £25–£40</li>
+    <li><strong>Full Re-Texture:</strong> £55–£70</li>
+</ul>
+<p>
+Exact pricing depends on complexity.
+</p>
+</details>
 
-    <div class="price-box">
-        <h3>🩵 Custom Texture Work — £25–£40</h3>
-        <ul>
-            <li>Full custom textures</li>
-            <li>Patterns and markings</li>
-            <li>Pastel, neon, cozy styles</li>
-        </ul>
-    </div>
+<details>
+<summary>⚠️ Content Rules</summary>
+<ul>
+    <li>I primarily create SFW avatars</li>
+    <li>Very limited suggestive elements may be accepted</li>
+    <li>No explicit, sexual, or adult content</li>
+    <li>Suggestive requests may cost slightly more</li>
+    <li>I reserve the right to refuse any request</li>
+</ul>
+</details>
 
-    <div class="price-box">
-        <h3>💙 Full Re-Texture Package — £55–£70</h3>
-        <ul>
-            <li>Full-body re-texture</li>
-            <li>Clothing and skin design</li>
-            <li>Optimised VRChat setup</li>
-        </ul>
-    </div>
-</div>
+<details>
+<summary>💳 Payment Policy</summary>
+<p>
+<strong>50% of the total price is required upfront</strong> to secure your commission slot.
+The remaining 50% is due once the avatar is complete, before files are delivered.
+</p>
+</details>
 
-<div class="section">
-    <h2>🔒 Content Boundaries & Pricing</h2>
-    <ul>
-        <li>I mainly create SFW avatars</li>
-        <li>Very limited suggestive elements may be accepted on a case-by-case basis</li>
-        <li>Suggestive requests may cost slightly more due to additional time and care</li>
-        <li>No explicit, sexual, or adult content</li>
-        <li>I reserve the right to decline any request</li>
-    </ul>
-</div>
+<details>
+<summary>✨ How It Works</summary>
+<ul>
+    <li>Contact me on Discord</li>
+    <li>Send references and ideas</li>
+    <li>Receive a quote</li>
+    <li>Pay 50% upfront</li>
+    <li>I begin work</li>
+    <li>Final payment is made</li>
+    <li>You receive your avatar</li>
+</ul>
+</details>
 
-<div class="section">
-    <h2>💳 Payment Policy</h2>
-    <ul>
-        <li>Due to past issues, <strong>50% of the total payment is required upfront</strong></li>
-        <li>The remaining 50% is due upon completion, before final files are sent</li>
-        <li>Payment is handled via PayPal</li>
-        <li>Refunds depend on how much work has been completed</li>
-    </ul>
-</div>
-
-<div class="section">
-    <h2>✨ How It Works</h2>
-    <ul>
-        <li>Contact me on Discord</li>
-        <li>Send references and ideas</li>
-        <li>Receive a price quote</li>
-        <li><strong>Pay 50% upfront to secure your slot</strong></li>
-        <li>I begin work</li>
-        <li>Final payment is made</li>
-        <li>You receive the completed Unity package</li>
-    </ul>
-</div>
-
-<div class="section" id="contact">
-    <h2>💬 Contact Me</h2>
-    <p><strong>Discord:</strong> puppo_boy</p>
-    <p><strong>VRChat:</strong> Bluey The Oreo</p>
-</div>
-
-<footer class="footer">
-    🐾 Thank you for checking out my commissions!<br>
-    <a href="tos.html">View Terms of Service</a>
-</footer>
+<details id="contact">
+<summary>💬 Contact</summary>
+<p><strong>Discord:</strong> puppo_boy</p>
+<p><strong>VRChat:</strong> Bluey The Oreo</p>
+<p>
+<a href="tos.html">View Terms of Service</a>
+</p>
+</details>
 
 </div>
 
