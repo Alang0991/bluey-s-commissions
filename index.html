@@ -16,91 +16,251 @@
   --accent:#4a79ff;
   --accent-dark:#9d79ff;
 }
-body{margin:0;font-family:Arial;background:var(--bg);color:var(--text);transition:.3s}
-body.dark{background:var(--bg-dark);color:var(--text-dark)}
-.container{max-width:900px;width:94%;margin:15px auto}
-.card{background:var(--card);backdrop-filter:blur(10px);border-radius:18px;padding:18px;margin-bottom:16px}
-body.dark .card{background:var(--card-dark)}
-h1,h2{text-align:center;color:var(--accent)}
-body.dark h1,body.dark h2{color:var(--accent-dark)}
-ul{padding-left:20px}
-.button{display:block;text-align:center;padding:14px;border-radius:14px;background:var(--accent);color:#fff;text-decoration:none;font-weight:bold;margin-top:10px}
-body.dark .button{background:var(--accent-dark)}
-.button.secondary{background:none;color:var(--accent);border:2px solid var(--accent)}
-body.dark .button.secondary{color:var(--accent-dark);border-color:var(--accent-dark)}
-.toggle{position:fixed;bottom:18px;right:18px;padding:14px 18px;border-radius:999px;border:none;background:var(--accent);color:#fff}
-body.dark .toggle{background:var(--accent-dark)}
+body{
+  margin:0;
+  font-family:Arial;
+  background:var(--bg);
+  color:var(--text);
+  transition:.3s;
+}
+body.dark{
+  background:var(--bg-dark);
+  color:var(--text-dark);
+}
+.container{
+  max-width:900px;
+  width:94%;
+  margin:15px auto;
+}
+.card{
+  background:var(--card);
+  backdrop-filter:blur(10px);
+  border-radius:18px;
+  padding:18px;
+  margin-bottom:16px;
+}
+body.dark .card{
+  background:var(--card-dark);
+}
+h1,h2{
+  text-align:center;
+  color:var(--accent);
+}
+body.dark h1,
+body.dark h2{
+  color:var(--accent-dark);
+}
+ul{
+  padding-left:20px;
+}
+.button{
+  display:block;
+  text-align:center;
+  padding:14px;
+  border-radius:14px;
+  background:var(--accent);
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+  margin-top:10px;
+}
+body.dark .button{
+  background:var(--accent-dark);
+}
+.button.secondary{
+  background:none;
+  color:var(--accent);
+  border:2px solid var(--accent);
+}
+body.dark .button.secondary{
+  color:var(--accent-dark);
+  border-color:var(--accent-dark);
+}
+.toggle{
+  position:fixed;
+  bottom:18px;
+  right:18px;
+  padding:14px 18px;
+  border-radius:999px;
+  border:none;
+  background:var(--accent);
+  color:#fff;
+}
+body.dark .toggle{
+  background:var(--accent-dark);
+}
+.small{
+  font-size:.9em;
+  opacity:.8;
+}
 </style>
 
 <script>
 function toggleDark(){
- document.body.classList.toggle("dark");
- localStorage.setItem("theme",document.body.classList.contains("dark")?"dark":"light");
+  document.body.classList.toggle("dark");
+  localStorage.setItem(
+    "theme",
+    document.body.classList.contains("dark") ? "dark" : "light"
+  );
 }
-window.onload=()=>{if(localStorage.getItem("theme")==="dark")document.body.classList.add("dark");};
+window.onload = () => {
+  if(localStorage.getItem("theme") === "dark"){
+    document.body.classList.add("dark");
+  }
+};
 </script>
 </head>
 
 <body>
+
 <button class="toggle" onclick="toggleDark()">🌙</button>
 
 <div class="container">
 
 <div class="card">
 <h1>💙 Bluey's Avatar Commissions</h1>
-<p style="text-align:center;">SFW • Cozy • Beginner-Friendly</p>
+<p style="text-align:center;">
+SFW • Cozy • Beginner-Friendly • VRChat Focused
+</p>
 <a class="button" href="#contact">✨ Commission Me ✨</a>
 </div>
 
 <div class="card">
 <h2>🐾 About</h2>
 <p>
-I’m <strong>Bluey</strong>, an VRChat avatar creator with ~2 years of experience.
-I focus on clean, comfortable avatars made in Unity.
+I’m <strong>Bluey</strong>, a VRChat avatar creator with around
+<strong>2 years of experience</strong>.
+I focus on clean, comfortable avatars set up in Unity,
+perfect for everyday VRChat use.
+</p>
+<p class="small">
+Best suited for edits, customization, and visual upgrades to existing avatar bases.
 </p>
 </div>
 
 <div class="card">
 <h2>💸 Pricing</h2>
+
 <ul>
-<li>Basic edits — £10–£20</li>
-<li>Custom textures — £25–£40</li>
-<li>Full re-texture — £55–£70</li>
+<li>
+<strong>Avatar Touch-Ups — £15–£25</strong><br>
+<span class="small">
+Light edits and minor improvements to an existing VRChat avatar.<br>
+Includes:
+<ul>
+<li>Basic toggle setup (clothing, accessories, expressions)</li>
+<li>Small colour or material adjustments</li>
+<li>Minor texture edits</li>
+<li>General cleanup or simple fixes in Unity</li>
 </ul>
+Best for quick polish or quality-of-life changes.
+</span>
+</li>
+
+<br>
+
+<li>
+<strong>Avatar Customization — £30–£55</strong><br>
+<span class="small">
+More involved VRChat avatar changes with noticeable customization.<br>
+Includes:
+<ul>
+<li>Detailed texture edits or partial custom textures</li>
+<li>Clothing changes or redesigned texture elements</li>
+<li>Added markings, patterns, or stylised details</li>
+<li>More complex toggles and feature setups</li>
+</ul>
+Great for making an avatar feel personal and unique.
+</span>
+</li>
+
+<br>
+
+<li>
+<strong>Avatar Overhaul — £60–£90</strong><br>
+<span class="small">
+Large-scale visual work or full avatar reworks for VRChat.<br>
+Includes:
+<ul>
+<li>Full or near-full texture updates</li>
+<li>High-detail, cohesive visual polish</li>
+<li>Style direction based on provided references</li>
+<li>Time-intensive Unity work and refinement</li>
+</ul>
+Best for major upgrades or a complete new look.
+</span>
+</li>
+</ul>
+
+<p class="small">
+Final pricing and complexity tier are determined by the scope of the request
+and the avatar base used.
+</p>
 </div>
 
 <div class="card">
 <h2>⚠️ Content Rules</h2>
 <ul>
-<li>This page is SFW only</li>
+<li>This page is <strong>SFW only</strong></li>
 <li>Very limited suggestive elements may be accepted</li>
-<li>No explicit adult content here</li>
-<li>Suggestive work may cost more</li>
+<li>No explicit adult content</li>
+<li>Suggestive content may affect pricing</li>
 </ul>
 <a class="button secondary" href="nsfw.html">🔞 NSFW Commission Page</a>
 </div>
 
 <div class="card">
 <h2>💳 Payment</h2>
-<p><strong>50% upfront</strong> is required. Remaining 50% is due before final files.</p>
+<p>
+<strong>50% upfront</strong> is required before work begins.<br>
+The remaining 50% is due before final files are delivered.
+</p>
+
+<ul>
+<li><strong>PayPal</strong></li>
+<li><strong>Payhip</strong> (private listing or invoice)</li>
+</ul>
+
+<p class="small">
+All prices are in GBP (£). Any conversion or platform fees are the buyer’s responsibility.
+</p>
 </div>
 
 <div class="card">
-<h2>✨ Process</h2>
+<h2>✨ Commission Process</h2>
 <ul>
-<li>Contact me</li>
-<li>Send references</li>
-<li>Get quote</li>
-<li>Pay 50%</li>
-<li>I work</li>
-<li>Final payment</li>
-<li>Delivery</li>
+<li>You contact me with details</li>
+<li>You send references and ideas</li>
+<li>I give you a quote</li>
+<li>You pay the 50% upfront</li>
+<li>I work on your avatar</li>
+<li>You pay the remaining 50%</li>
+<li>Final delivery</li>
 </ul>
 </div>
 
 <div class="card" id="contact">
-<h2>💬 Contact</h2>
+<h2>💬 How to Contact Me</h2>
+
 <p><strong>Discord:</strong> puppo_boy</p>
+
+<p>
+When messaging me, please include:
+</p>
+
+<ul>
+<li>What you want done</li>
+<li>Avatar base name or files (if available)</li>
+<li>References (images, links, examples)</li>
+<li>Clothing, colour, or style ideas</li>
+<li>SFW or suggestive (be clear)</li>
+<li>Your budget (optional but helpful)</li>
+</ul>
+
+<p class="small">
+Messages without details (e.g. “hi” or “how much?”) may take longer to respond to.
+</p>
+
 <a href="tos.html">View Terms of Service</a>
 </div>
 
