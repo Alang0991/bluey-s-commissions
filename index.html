@@ -16,14 +16,14 @@
 
 <div class="container">
 
-<div class="card audio-controls">
+<div class="card audio-bar">
 
-<button class="button" onclick="readPage()">🔊 Listen</button>
-<button class="button secondary" onclick="pauseReading()">⏸ Pause</button>
-<button class="button secondary" onclick="resumeReading()">▶ Resume</button>
-<button class="button secondary" onclick="stopReading()">⏹ Stop</button>
+<button onclick="readPage()">🔊 Listen</button>
+<button onclick="pauseReading()">⏸ Pause</button>
+<button onclick="resumeReading()">▶ Resume</button>
+<button onclick="stopReading()">⏹ Stop</button>
 
-<p class="small">Accessibility audio reader</p>
+<span class="audio-label">Accessibility reader</span>
 
 </div>
 
@@ -66,12 +66,6 @@ I focus on creating clean and comfortable avatars designed for everyday VRChat u
 
 </ul>
 
-<p class="small">
-
-Final pricing depends on the avatar base and complexity of the request.
-
-</p>
-
 </div>
 
 <div class="card">
@@ -81,32 +75,12 @@ Final pricing depends on the avatar base and complexity of the request.
 <ul>
 
 <li>This page is SFW</li>
-<li>Limited NSFW commissions may be available</li>
-<li>A dedicated NSFW rules page explains the guidelines</li>
+<li>Limited NSFW commissions may be accepted</li>
+<li>See the NSFW page for full rules</li>
 
 </ul>
 
 <a class="button secondary" href="nsfw.html">🔞 NSFW Rules</a>
-
-</div>
-
-<div class="card">
-
-<h2>💳 Payment</h2>
-
-<p>
-
-50% upfront is required before work begins.  
-Remaining 50% is required before final delivery.
-
-</p>
-
-<ul>
-
-<li>PayPal</li>
-<li>Payhip</li>
-
-</ul>
 
 </div>
 
@@ -119,9 +93,9 @@ Remaining 50% is required before final delivery.
 <ul>
 
 <li>Explain what you want done</li>
-<li>Provide avatar base name</li>
-<li>Send reference images</li>
-<li>Provide assets if needed</li>
+<li>Avatar base name</li>
+<li>Reference images</li>
+<li>Provide required assets</li>
 
 </ul>
 
@@ -140,6 +114,7 @@ stopReading();
 const text=document.querySelector(".container").innerText;
 speech=new SpeechSynthesisUtterance(text);
 speech.rate=1;
+speech.pitch=1;
 window.speechSynthesis.speak(speech);
 }
 
