@@ -1,105 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <title>Bluey's Avatar Commissions</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<style>
-:root {
-  --bg: linear-gradient(180deg,#c9e9ff,#ffd6f4);
-  --bg-dark: linear-gradient(180deg,#1a1b3a,#3b157a);
-  --card: rgba(255,255,255,.65);
-  --card-dark: rgba(0,0,0,.35);
-  --text:#2a2a2a;
-  --text-dark:#e8e8ff;
-  --accent:#4a79ff;
-  --accent-dark:#9d79ff;
-}
-body{
-  margin:0;
-  font-family:Arial;
-  background:var(--bg);
-  color:var(--text);
-  transition:.3s;
-}
-body.dark{
-  background:var(--bg-dark);
-  color:var(--text-dark);
-}
-.container{
-  max-width:900px;
-  width:94%;
-  margin:15px auto;
-}
-.card{
-  background:var(--card);
-  backdrop-filter:blur(10px);
-  border-radius:18px;
-  padding:18px;
-  margin-bottom:16px;
-}
-body.dark .card{
-  background:var(--card-dark);
-}
-h1,h2{
-  text-align:center;
-  color:var(--accent);
-}
-body.dark h1,
-body.dark h2{
-  color:var(--accent-dark);
-}
-ul{
-  padding-left:20px;
-}
-.button{
-  display:block;
-  text-align:center;
-  padding:14px;
-  border-radius:14px;
-  background:var(--accent);
-  color:#fff;
-  text-decoration:none;
-  font-weight:bold;
-  margin-top:10px;
-}
-body.dark .button{
-  background:var(--accent-dark);
-}
-.toggle{
-  position:fixed;
-  bottom:18px;
-  right:18px;
-  padding:14px 18px;
-  border-radius:999px;
-  border:none;
-  background:var(--accent);
-  color:#fff;
-}
-body.dark .toggle{
-  background:var(--accent-dark);
-}
-.small{
-  font-size:.9em;
-  opacity:.8;
-}
-</style>
+<link rel="stylesheet" href="shared.css">
 
-<script>
-function toggleDark(){
-  document.body.classList.toggle("dark");
-  localStorage.setItem(
-    "theme",
-    document.body.classList.contains("dark") ? "dark" : "light"
-  );
-}
-window.onload = () => {
-  if(localStorage.getItem("theme") === "dark"){
-    document.body.classList.add("dark");
-  }
-};
-</script>
 </head>
 
 <body>
@@ -108,149 +16,149 @@ window.onload = () => {
 
 <div class="container">
 
+<div class="card audio-controls">
+
+<button class="button" onclick="readPage()">🔊 Listen</button>
+<button class="button secondary" onclick="pauseReading()">⏸ Pause</button>
+<button class="button secondary" onclick="resumeReading()">▶ Resume</button>
+<button class="button secondary" onclick="stopReading()">⏹ Stop</button>
+
+<p class="small">Accessibility audio reader</p>
+
+</div>
+
 <div class="card">
+
 <h1>💙 Bluey's Avatar Commissions</h1>
-<p style="text-align:center;">
-Cozy • Beginner-Friendly • VRChat Focused
+
+<p style="text-align:center">
+VRChat Avatar Edits • Customisation • Unity Setup
 </p>
-<a class="button" href="#contact">✨ Commission Me ✨</a>
+
+<a class="button" href="#contact">✨ Commission Me</a>
+
 </div>
 
 <div class="card">
+
 <h2>🐾 About</h2>
+
 <p>
-I’m <strong>Bluey</strong>, a VRChat avatar creator with around
-<strong>2 years of experience</strong>.
-I focus on clean, comfortable avatars set up in Unity,
-perfect for everyday VRChat use.
+
+I'm <strong>Bluey</strong>, a VRChat avatar creator with around
+<strong>2 years experience</strong> working with Unity avatars.
+
+I focus on creating clean and comfortable avatars designed for everyday VRChat use.
+
 </p>
-<p class="small">
-Best suited for edits, customization, and visual upgrades to existing avatar bases.
-</p>
+
 </div>
 
 <div class="card">
+
 <h2>💸 Pricing</h2>
 
 <ul>
-<li>
-<strong>Avatar Touch-Ups — £15–£25</strong><br>
-<span class="small">
-Light edits and minor improvements to an existing VRChat avatar.<br>
-Includes:
-<ul>
-<li>Basic toggle setup (clothing, accessories, expressions)</li>
-<li>Small colour or material adjustments</li>
-<li>Minor texture edits</li>
-<li>General cleanup or simple fixes in Unity</li>
-</ul>
-Best for quick polish or quality-of-life changes.
-</span>
-</li>
 
-<br>
+<li><strong>Touch Ups — £15-£25</strong></li>
+<li><strong>Customisation — £30-£55</strong></li>
+<li><strong>Avatar Overhaul — £60-£90</strong></li>
 
-<li>
-<strong>Avatar Customization — £30–£55</strong><br>
-<span class="small">
-More involved VRChat avatar changes with noticeable customization.<br>
-Includes:
-<ul>
-<li>Detailed texture edits or partial custom textures</li>
-<li>Clothing changes or redesigned texture elements</li>
-<li>Added markings, patterns, or stylised details</li>
-<li>More complex toggles and feature setups</li>
-</ul>
-Great for making an avatar feel personal and unique.
-</span>
-</li>
-
-<br>
-
-<li>
-<strong>Avatar Overhaul — £60–£90</strong><br>
-<span class="small">
-Large-scale visual work or full avatar reworks for VRChat.<br>
-Includes:
-<ul>
-<li>Full or near-full texture updates</li>
-<li>High-detail, cohesive visual polish</li>
-<li>Style direction based on provided references</li>
-<li>Time-intensive Unity work and refinement</li>
-</ul>
-Best for major upgrades or a complete new look.
-</span>
-</li>
 </ul>
 
 <p class="small">
-Final pricing and complexity tier are determined by the scope of the request
-and the avatar base used.
+
+Final pricing depends on the avatar base and complexity of the request.
+
 </p>
+
 </div>
 
 <div class="card">
+
 <h2>⚠️ Content Rules</h2>
+
 <ul>
-<li>This page is <strong>SFW only</strong></li>
-<li>No adult content</li>
+
+<li>This page is SFW</li>
+<li>Limited NSFW commissions may be available</li>
+<li>A dedicated NSFW rules page explains the guidelines</li>
+
 </ul>
+
+<a class="button secondary" href="nsfw.html">🔞 NSFW Rules</a>
+
 </div>
 
 <div class="card">
+
 <h2>💳 Payment</h2>
+
 <p>
-<strong>50% upfront</strong> is required before work begins.<br>
-The remaining 50% is due before final files are delivered.
+
+50% upfront is required before work begins.  
+Remaining 50% is required before final delivery.
+
 </p>
 
 <ul>
-<li><strong>PayPal</strong></li>
-<li><strong>Payhip</strong> (private listing or invoice)</li>
+
+<li>PayPal</li>
+<li>Payhip</li>
+
 </ul>
 
-<p class="small">
-All prices are in GBP (£). Any conversion or platform fees are the buyer’s responsibility.
-</p>
-</div>
-
-<div class="card">
-<h2>✨ Commission Process</h2>
-<ul>
-<li>You contact me with details</li>
-<li>You send references and ideas</li>
-<li>I give you a quote</li>
-<li>You pay the 50% upfront</li>
-<li>I work on your avatar</li>
-<li>You pay the remaining 50%</li>
-<li>Final delivery</li>
-</ul>
 </div>
 
 <div class="card" id="contact">
-<h2>💬 How to Contact Me</h2>
+
+<h2>💬 Contact</h2>
 
 <p><strong>Discord:</strong> puppo_boy</p>
 
-<p>
-When messaging me, please include:
-</p>
-
 <ul>
-<li>What you want done</li>
-<li>Avatar base name or files (if available)</li>
-<li>References (images, links, examples)</li>
-<li>Clothing, colour, or style ideas</li>
-<li>Your budget (optional but helpful)</li>
+
+<li>Explain what you want done</li>
+<li>Provide avatar base name</li>
+<li>Send reference images</li>
+<li>Provide assets if needed</li>
+
 </ul>
 
-<p class="small">
-Messages without details (e.g. “hi” or “how much?”) may take longer to respond to.
-</p>
+<a class="button secondary" href="tos.html">📄 Terms of Service</a>
 
-<a href="tos.html">View Terms of Service</a>
 </div>
 
 </div>
+
+<script>
+
+let speech;
+
+function readPage(){
+stopReading();
+const text=document.querySelector(".container").innerText;
+speech=new SpeechSynthesisUtterance(text);
+speech.rate=1;
+window.speechSynthesis.speak(speech);
+}
+
+function pauseReading(){window.speechSynthesis.pause();}
+function resumeReading(){window.speechSynthesis.resume();}
+function stopReading(){window.speechSynthesis.cancel();}
+
+function toggleDark(){
+document.body.classList.toggle("dark");
+localStorage.setItem("theme",document.body.classList.contains("dark")?"dark":"light");
+}
+
+window.onload=()=>{
+if(localStorage.getItem("theme")==="dark"){
+document.body.classList.add("dark");
+}
+}
+
+</script>
+
 </body>
 </html>
