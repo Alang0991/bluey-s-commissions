@@ -8,6 +8,95 @@
 
 <link rel="stylesheet" href="shared.css">
 
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f0f1a;
+    color: white;
+    transition: 0.3s;
+}
+
+body.dark {
+    background: #07070f;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Glass cards */
+.card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 16px 0;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    animation: fadeIn 0.4s ease;
+}
+
+/* Headings */
+h1 {
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+h2 {
+    border-left: 4px solid #6ec1ff;
+    padding-left: 10px;
+}
+
+/* Button */
+.button {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #6ec1ff, #4a7dff);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* Toggle */
+.toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Lists */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin: 6px 0;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+</style>
+
 </head>
 
 <body>
@@ -17,67 +106,100 @@
 <div class="container">
 
 <div class="card">
-
-<h1>📄 Terms of Service</h1>
-
-<p style="text-align:center">
-By commissioning me you agree to the following terms.
-</p>
-
+    <h1>📄 Terms of Service</h1>
+    <p style="text-align:center; opacity:0.8">
+        By commissioning me, you agree to the rules below. Please read carefully before ordering.
+    </p>
 </div>
 
 <div class="card">
-
-<h2>💳 Payment</h2>
-
-<ul>
-<li>50% payment required before work begins</li>
-<li>Remaining payment required before delivery</li>
-<li>Payments via PayPal or Payhip</li>
-</ul>
-
+    <h2>💳 Payment Terms</h2>
+    <ul>
+        <li>50% deposit is required before any work begins</li>
+        <li>Remaining 50% must be paid before final file delivery</li>
+        <li>Work will not be fully transferred until payment is complete</li>
+        <li>Payments accepted via PayPal or Payhip only</li>
+        <li>Chargebacks will result in blacklist from future commissions</li>
+    </ul>
 </div>
 
 <div class="card">
-
-<h2>💸 Refunds</h2>
-
-<ul>
-<li>Refunds depend on work completed</li>
-<li>No guaranteed refund once work has started</li>
-</ul>
-
+    <h2>📦 Delivery & Workflow</h2>
+    <ul>
+        <li>Estimated completion time will be given per commission</li>
+        <li>Delays may occur depending on workload or complexity</li>
+        <li>You will receive progress updates when appropriate</li>
+        <li>Final delivery includes Unity-ready VRChat avatar files (if applicable)</li>
+    </ul>
 </div>
 
 <div class="card">
-
-<h2>🧩 Assets</h2>
-
-<ul>
-<li>You must own the assets provided</li>
-<li>I am not responsible for unlicensed assets</li>
-</ul>
-
+    <h2>🔁 Revisions</h2>
+    <ul>
+        <li>Minor adjustments are included during development</li>
+        <li>Major changes after approval may cost extra</li>
+        <li>Once final delivery is accepted, free revisions are no longer included</li>
+    </ul>
 </div>
 
 <div class="card">
-
-<h2>🚫 Rights</h2>
-
-<ul>
-<li>I may decline any commission</li>
-<li>I may cancel commissions if rules are broken</li>
-</ul>
-
+    <h2>💸 Refund Policy</h2>
+    <ul>
+        <li>Refunds are based on work completed at time of request</li>
+        <li>No full refund after significant progress has been made</li>
+        <li>If I cancel the commission, a partial refund will be issued</li>
+    </ul>
 </div>
 
 <div class="card">
+    <h2>🧩 Assets & Ownership</h2>
+    <ul>
+        <li>You must own or have rights to all provided assets</li>
+        <li>I am not responsible for stolen or unlicensed content</li>
+        <li>Client-provided assets are used at your own risk</li>
+    </ul>
+</div>
 
-<a class="button" href="index.html">← Back</a>
+<div class="card">
+    <h2>🚫 Rights & Usage</h2>
+    <ul>
+        <li>I reserve the right to decline any commission</li>
+        <li>I may cancel work if rules are broken or disrespect occurs</li>
+        <li>I may showcase finished work in my portfolio unless requested otherwise</li>
+        <li>You may use the finished avatar for personal VRChat use only</li>
+    </ul>
+</div>
 
+<div class="card">
+    <h2>⚠️ Final Notes</h2>
+    <ul>
+        <li>These terms may be updated at any time</li>
+        <li>Commissioning me means you agree to all listed terms</li>
+        <li>Failure to follow rules may result in refusal of service</li>
+    </ul>
+</div>
+
+<div class="card" style="text-align:center;">
+    <a class="button" href="index.html">← Back to Commissions</a>
 </div>
 
 </div>
+
+<script>
+function toggleDark(){
+    document.body.classList.toggle("dark");
+    localStorage.setItem(
+        "theme",
+        document.body.classList.contains("dark") ? "dark" : "light"
+    );
+}
+
+window.onload = () => {
+    if(localStorage.getItem("theme") === "dark"){
+        document.body.classList.add("dark");
+    }
+}
+</script>
 
 </body>
 </html>
