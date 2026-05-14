@@ -8,6 +8,95 @@
 
 <link rel="stylesheet" href="shared.css">
 
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f0f1a;
+    color: white;
+    transition: 0.3s;
+}
+
+body.dark {
+    background: #07070f;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Glass cards (matches main page) */
+.card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 20px;
+    margin: 16px 0;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    animation: fadeIn 0.4s ease;
+}
+
+/* Headings */
+h1 {
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+h2 {
+    border-left: 4px solid #6ec1ff;
+    padding-left: 10px;
+}
+
+/* Button match */
+.button {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #6ec1ff, #4a7dff);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* Toggle */
+.toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Lists */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin: 6px 0;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+</style>
+
 </head>
 
 <body>
@@ -17,80 +106,71 @@
 <div class="container">
 
 <div class="card">
-
-<h1>🔞 NSFW Commission Rules</h1>
-
-<p style="text-align:center">
-Limited NSFW commissions may be accepted under strict rules.
-</p>
-
+    <h1>🔞 NSFW Commission Rules</h1>
+    <p style="text-align:center; opacity:0.8">
+        Limited NSFW commissions are accepted under strict guidelines.
+    </p>
 </div>
 
 <div class="card">
-
-<h2>🔞 Age Requirement</h2>
-
-<ul>
-
-<li>You must be 18 years or older</li>
-<li>Characters must represent adults</li>
-<li>Proof of age may be requested</li>
-<li>If proof of age cannot be provided the commission will be declined</li>
-
-</ul>
-
+    <h2>🔞 Age Requirement</h2>
+    <ul>
+        <li>You must be 18 years or older</li>
+        <li>Characters must represent adults only</li>
+        <li>Age verification may be requested</li>
+        <li>Failure to verify = automatic refusal</li>
+    </ul>
 </div>
 
 <div class="card">
-
-<h2>✅ Allowed</h2>
-
-<ul>
-
-<li>Mature avatar textures</li>
-<li>Suggestive clothing variations</li>
-<li>Adult themed toggles</li>
-
-</ul>
-
+    <h2>✅ Allowed</h2>
+    <ul>
+        <li>Mature avatar textures</li>
+        <li>Suggestive clothing variants</li>
+        <li>Adult-themed toggles</li>
+    </ul>
 </div>
 
 <div class="card">
-
-<h2>🚫 Not Allowed</h2>
-
-<ul>
-
-<li>Anything involving minors</li>
-<li>Illegal content</li>
-<li>Extreme or disturbing themes</li>
-
-</ul>
-
+    <h2>🚫 Not Allowed</h2>
+    <ul>
+        <li>Anything involving minors (zero tolerance)</li>
+        <li>Illegal or exploitative content</li>
+        <li>Extreme, violent or disturbing themes</li>
+    </ul>
 </div>
 
 <div class="card">
-
-<h2>📦 What You Must Provide</h2>
-
-<ul>
-
-<li>Avatar base name</li>
-<li>Reference images</li>
-<li>Clear description of request</li>
-<li>Assets required for the work</li>
-
-</ul>
-
+    <h2>📦 Requirements</h2>
+    <ul>
+        <li>Avatar base name</li>
+        <li>Clear reference images</li>
+        <li>Detailed description of request</li>
+        <li>All required assets provided</li>
+    </ul>
 </div>
 
-<div class="card">
-
-<a class="button" href="index.html">← Back</a>
-
+<div class="card" style="text-align:center;">
+    <a class="button" href="index.html">← Back to Commissions</a>
 </div>
 
 </div>
+
+<script>
+function toggleDark(){
+    document.body.classList.toggle("dark");
+    localStorage.setItem(
+        "theme",
+        document.body.classList.contains("dark") ? "dark" : "light"
+    );
+}
+
+window.onload = () => {
+    if(localStorage.getItem("theme") === "dark"){
+        document.body.classList.add("dark");
+    }
+}
+</script>
 
 </body>
 </html>
