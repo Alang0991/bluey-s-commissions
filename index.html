@@ -3,159 +3,403 @@
 <head>
 <meta charset="UTF-8">
 <title>Bluey's Avatar Commissions</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link rel="stylesheet" href="shared.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body {
-    margin: 0;
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
     font-family: Arial, sans-serif;
-    background: #0f0f1a;
-    color: white;
-    transition: 0.3s;
+    background:
+        radial-gradient(circle at top, #1b2142 0%, #090b15 45%, #05060c 100%);
+    color:white;
+    overflow-x:hidden;
+    min-height:100vh;
 }
 
-/* Dark mode */
-body.dark {
-    background: #07070f;
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar{
+    width:8px;
 }
 
-/* Layout */
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
+::-webkit-scrollbar-track{
+    background:#090b15;
 }
 
-/* Cards */
-.card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.08);
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
-    padding: 20px;
-    margin: 16px 0;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-    animation: fadeIn 0.5s ease;
+::-webkit-scrollbar-thumb{
+    background:#4d79ff;
+    border-radius:20px;
 }
 
-/* Headings */
-h1 {
-    font-size: 2.2rem;
-    text-align: center;
-    margin-bottom: 10px;
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+    width:100%;
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
 }
 
-h2 {
-    border-left: 4px solid #6ec1ff;
-    padding-left: 10px;
-    margin-top: 0;
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(90,140,255,0.25),
+            rgba(0,0,0,0.25)
+        );
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:28px;
+
+    padding:60px 30px;
+
+    margin-top:25px;
+
+    text-align:center;
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.45),
+        inset 0 0 30px rgba(255,255,255,0.03);
 }
 
-/* Buttons */
-.button, button {
-    display: inline-block;
-    padding: 10px 16px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    background: linear-gradient(135deg, #6ec1ff, #4a7dff);
-    color: white;
-    font-weight: bold;
-    transition: 0.2s;
-    text-decoration: none;
-    font-size: 0.95rem;
+.hero::before{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:#5d89ff;
+    filter:blur(140px);
+    opacity:0.35;
+    top:-120px;
+    left:-100px;
 }
 
-.button:hover, button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+.hero h1{
+    font-size:3rem;
+    margin-bottom:12px;
 }
 
-.button.secondary {
-    background: rgba(255,255,255,0.1);
+.hero p{
+    opacity:0.8;
+    font-size:1.1rem;
+    line-height:1.6;
 }
 
-/* Audio bar */
-.audio-bar {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+/* =========================
+   BUTTONS
+========================= */
+
+.button{
+    display:inline-block;
+
+    padding:14px 22px;
+
+    border-radius:14px;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+    transition:0.25s ease;
+
+    margin-top:20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5f95ff,
+            #6f6bff
+        );
+
+    color:white;
+
+    box-shadow:
+        0 10px 25px rgba(60,90,255,0.35);
 }
 
-.audio-label {
-    opacity: 0.7;
-    font-size: 0.9rem;
+.button:hover{
+    transform:translateY(-3px) scale(1.02);
+
+    box-shadow:
+        0 14px 35px rgba(60,90,255,0.45);
 }
 
-/* Toggle */
-.toggle {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    z-index: 999;
+.secondary{
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.08);
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
+/* =========================
+   CARDS
+========================= */
+
+.card{
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.03)
+        );
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:24px;
+
+    padding:28px;
+
+    margin-top:22px;
+
+    backdrop-filter:blur(14px);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.35);
+
+    animation:fadeUp 0.5s ease;
+}
+
+.card h2{
+    font-size:1.8rem;
+
+    margin-bottom:18px;
+
+    color:#73a2ff;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.card p{
+    line-height:1.8;
+    opacity:0.92;
+}
+
+/* =========================
+   PRICING
+========================= */
+
+.price-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+    gap:18px;
+    margin-top:20px;
+}
+
+.price-box{
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,0.06),
+            rgba(255,255,255,0.02)
+        );
+
+    border:1px solid rgba(255,255,255,0.06);
+
+    border-radius:20px;
+
+    padding:22px;
+
+    transition:0.25s ease;
+}
+
+.price-box:hover{
+    transform:translateY(-5px);
+
+    border-color:rgba(100,140,255,0.4);
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,0.35);
+}
+
+.price-box h3{
+    color:#82adff;
+    margin-bottom:10px;
+    font-size:1.2rem;
+}
+
+.price{
+    font-size:1.4rem;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.price-box ul{
+    padding-left:18px;
+}
+
+.price-box li{
+    margin:8px 0;
+    opacity:0.9;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-box{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.contact-tag{
+    background:rgba(255,255,255,0.06);
+    border-radius:14px;
+    padding:14px;
+    border:1px solid rgba(255,255,255,0.05);
+}
+
+/* =========================
+   AUDIO BAR
+========================= */
+
+.audio-bar{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+}
+
+.audio-bar button{
+    border:none;
+    border-radius:14px;
+    padding:12px 18px;
+    cursor:pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5d8cff,
+            #7b6fff
+        );
+
+    color:white;
+    font-weight:bold;
+
+    transition:0.2s;
+}
+
+.audio-bar button:hover{
+    transform:translateY(-2px);
+}
+
+/* =========================
+   TOGGLE
+========================= */
+
+.toggle{
+    position:fixed;
+    top:18px;
+    right:18px;
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+    border:none;
+
+    cursor:pointer;
+
+    font-size:1.2rem;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5f95ff,
+            #6f6bff
+        );
+
+    color:white;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.35);
+
+    z-index:999;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark{
+    background:
+        radial-gradient(circle at top, #11152e 0%, #05060c 60%);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(15px);
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    to{
+        opacity:1;
+        transform:translateY(0);
     }
 }
 
-/* Lists */
-ul {
-    padding-left: 20px;
-}
+/* =========================
+   MOBILE
+========================= */
 
-li {
-    margin: 6px 0;
-}
+@media(max-width:700px){
 
-/* Pricing spacing */
-.price-box {
-    margin-bottom: 25px;
-}
-
-/* Mobile support */
-@media (max-width: 700px) {
-
-    .container {
-        padding: 14px;
+    .hero{
+        padding:45px 20px;
     }
 
-    .card {
-        padding: 16px;
+    .hero h1{
+        font-size:2.2rem;
     }
 
-    h1 {
-        font-size: 1.8rem;
+    .card{
+        padding:22px;
     }
 
-    .button,
-    button {
-        width: 100%;
-        text-align: center;
+    .button{
+        width:100%;
+        text-align:center;
     }
 
-    .audio-bar {
-        flex-direction: column;
+    .toggle{
+        width:50px;
+        height:50px;
     }
 }
+
 </style>
-
 </head>
 
 <body>
@@ -164,166 +408,178 @@ li {
 
 <div class="container">
 
-<!-- Accessibility -->
-<div class="card audio-bar">
-    <button onclick="readPage()">🔊 Listen</button>
-    <button onclick="pauseReading()">⏸ Pause</button>
-    <button onclick="resumeReading()">▶ Resume</button>
-    <button onclick="stopReading()">⏹ Stop</button>
-
-    <span class="audio-label">
-        Accessibility reader
-    </span>
-</div>
-
-<!-- Hero -->
+<!-- ACCESSIBILITY -->
 <div class="card">
 
-    <h1>💙 Bluey's Avatar Commissions</h1>
+    <div class="audio-bar">
 
-    <p style="text-align:center; opacity:0.8;">
-        VRChat Avatar Edits • Customisation • Unity Setup
-    </p>
+        <button onclick="readPage()">🔊 Listen</button>
 
-    <div style="text-align:center; margin-top:15px;">
-        <a class="button" href="#contact">
-            ✨ Commission Me
-        </a>
+        <button onclick="pauseReading()">⏸ Pause</button>
+
+        <button onclick="resumeReading()">▶ Resume</button>
+
+        <button onclick="stopReading()">⏹ Stop</button>
+
     </div>
 
 </div>
 
-<!-- About -->
+<!-- HERO -->
+<section class="hero">
+
+    <h1>💙 Bluey's Avatar Commissions</h1>
+
+    <p>
+        VRChat Avatar Edits • Blender Work • Unity Setup
+        <br>
+        Clean, stylish, performance-friendly avatars built for VRChat.
+    </p>
+
+    <a href="#contact" class="button">
+        ✨ Commission Me
+    </a>
+
+</section>
+
+<!-- ABOUT -->
 <div class="card">
 
     <h2>🐾 About</h2>
 
     <p>
-        I'm <strong>Bluey</strong>, a VRChat avatar creator with around
-        <strong>2 years experience</strong> working with Unity avatars.
+        I'm Bluey, a VRChat avatar creator with around
+        2 years of experience working with Unity and Blender.
     </p>
 
+    <br>
+
     <p>
-        I focus on clean, performance-friendly avatars made for
-        everyday VRChat use while keeping avatars looking unique,
-        expressive, and fun.
+        I specialise in avatar edits, customisation,
+        optimisation, accessories, clothing fitting,
+        and making avatars feel unique while staying
+        comfortable for everyday VRChat use.
     </p>
 
 </div>
 
-<!-- Pricing -->
+<!-- PRICING -->
 <div class="card">
 
     <h2>💸 Pricing</h2>
 
-    <p style="opacity:0.8;">
-        Prices may vary depending on avatar complexity,
-        optimisation work, and assets used.
+    <p>
+        Prices can vary depending on avatar complexity,
+        optimisation requirements, and assets used.
     </p>
 
-    <!-- Light Work -->
-    <div class="price-box">
+    <div class="price-grid">
 
-        <h3>✨ Light Blender Work — £15-£25</h3>
+        <!-- LIGHT -->
+        <div class="price-box">
 
-        <p>
-            Small edits and simple additions.
-        </p>
+            <h3>✨ Light Blender Work</h3>
 
-        <ul>
-            <li>Easy asset additions</li>
-            <li>Custom jewellery</li>
-            <li>Simple clothing fitting</li>
-            <li>Texture recolours</li>
-            <li>Minor fixes</li>
-            <li>Small accessory setup</li>
-        </ul>
+            <div class="price">£15 - £25</div>
 
-    </div>
+            <ul>
+                <li>Easy asset additions</li>
+                <li>Custom jewellery</li>
+                <li>Simple clothing fitting</li>
+                <li>Texture recolours</li>
+                <li>Minor avatar fixes</li>
+                <li>Accessory setup</li>
+            </ul>
 
-    <!-- Customisation -->
-    <div class="price-box">
+        </div>
 
-        <h3>🛠 Avatar Customisation — £30-£55</h3>
+        <!-- CUSTOM -->
+        <div class="price-box">
 
-        <p>
-            More advanced avatar edits and personalisation.
-        </p>
+            <h3>🛠 Avatar Customisation</h3>
 
-        <ul>
-            <li>Multiple assets added</li>
-            <li>Advanced clothing fitting</li>
-            <li>Hair edits and combinations</li>
-            <li>Toggles setup</li>
-            <li>Material adjustments</li>
-            <li>Basic optimisation work</li>
-            <li>Unity setup and testing</li>
-        </ul>
+            <div class="price">£30 - £55</div>
 
-    </div>
+            <ul>
+                <li>Multiple asset additions</li>
+                <li>Advanced clothing fitting</li>
+                <li>Hair combinations</li>
+                <li>Toggles setup</li>
+                <li>Material adjustments</li>
+                <li>Basic optimisation</li>
+            </ul>
 
-    <!-- Overhaul -->
-    <div class="price-box">
+        </div>
 
-        <h3>🔥 Avatar Overhaul — £60-£90</h3>
+        <!-- OVERHAUL -->
+        <div class="price-box">
 
-        <p>
-            Large-scale edits and major avatar changes.
-        </p>
+            <h3>🔥 Avatar Overhaul</h3>
 
-        <ul>
-            <li>Heavy avatar restructuring</li>
-            <li>Complete style redesigns</li>
-            <li>Large asset integration</li>
-            <li>Advanced toggle systems</li>
-            <li>Extensive Blender work</li>
-            <li>Performance optimisation</li>
-            <li>Full Unity preparation</li>
-        </ul>
+            <div class="price">£60 - £90</div>
+
+            <ul>
+                <li>Heavy Blender work</li>
+                <li>Full avatar redesign</li>
+                <li>Advanced toggle systems</li>
+                <li>Large asset integration</li>
+                <li>Performance optimisation</li>
+                <li>Complete Unity setup</li>
+            </ul>
+
+        </div>
 
     </div>
-
-    <p style="opacity:0.7;">
-        Unsure what category your commission fits into?
-        Feel free to message me first.
-    </p>
 
 </div>
 
-<!-- Rules -->
+<!-- RULES -->
 <div class="card">
 
     <h2>⚠️ Content Rules</h2>
 
-    <ul>
+    <ul style="padding-left:20px; line-height:2;">
         <li>SFW by default</li>
         <li>Limited NSFW commissions (case-by-case)</li>
         <li>See NSFW page for full details</li>
     </ul>
 
-    <a class="button secondary" href="nsfw.html">
+    <a href="nsfw.html" class="button secondary">
         🔞 NSFW Rules
     </a>
 
 </div>
 
-<!-- Contact -->
+<!-- CONTACT -->
 <div class="card" id="contact">
 
     <h2>💬 Contact</h2>
 
-    <p>
-        <strong>Discord:</strong> BlueyBarks
-    </p>
+    <div class="contact-box">
 
-    <ul>
-        <li>What you want done</li>
-        <li>Avatar base name</li>
-        <li>Reference images</li>
-        <li>Required assets provided</li>
-    </ul>
+        <div class="contact-tag">
+            <strong>Discord:</strong> BlueyBarks
+        </div>
 
-    <a class="button secondary" href="tos.html">
+        <div class="contact-tag">
+            ✔ What you want done
+        </div>
+
+        <div class="contact-tag">
+            ✔ Avatar base name
+        </div>
+
+        <div class="contact-tag">
+            ✔ Reference images
+        </div>
+
+        <div class="contact-tag">
+            ✔ Required assets provided
+        </div>
+
+    </div>
+
+    <a href="tos.html" class="button secondary">
         📄 Terms of Service
     </a>
 
@@ -332,15 +588,18 @@ li {
 </div>
 
 <script>
+
 let speech;
 
-function readPage() {
+function readPage(){
 
     stopReading();
 
-    const text = document.querySelector(".container").innerText;
+    const text =
+        document.querySelector(".container").innerText;
 
-    speech = new SpeechSynthesisUtterance(text);
+    speech =
+        new SpeechSynthesisUtterance(text);
 
     speech.rate = 1;
     speech.pitch = 1;
@@ -348,19 +607,19 @@ function readPage() {
     window.speechSynthesis.speak(speech);
 }
 
-function pauseReading() {
+function pauseReading(){
     window.speechSynthesis.pause();
 }
 
-function resumeReading() {
+function resumeReading(){
     window.speechSynthesis.resume();
 }
 
-function stopReading() {
+function stopReading(){
     window.speechSynthesis.cancel();
 }
 
-function toggleDark() {
+function toggleDark(){
 
     document.body.classList.toggle("dark");
 
@@ -374,11 +633,11 @@ function toggleDark() {
 
 window.onload = () => {
 
-    if(localStorage.getItem("theme") === "dark") {
+    if(localStorage.getItem("theme") === "dark"){
         document.body.classList.add("dark");
     }
-
 }
+
 </script>
 
 </body>
