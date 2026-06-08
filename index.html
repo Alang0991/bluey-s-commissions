@@ -16,6 +16,7 @@ body {
     transition: 0.3s;
 }
 
+/* Dark mode */
 body.dark {
     background: #07070f;
 }
@@ -27,7 +28,7 @@ body.dark {
     padding: 20px;
 }
 
-/* Card redesign */
+/* Cards */
 .card {
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.08);
@@ -49,6 +50,7 @@ h1 {
 h2 {
     border-left: 4px solid #6ec1ff;
     padding-left: 10px;
+    margin-top: 0;
 }
 
 /* Buttons */
@@ -63,6 +65,7 @@ h2 {
     font-weight: bold;
     transition: 0.2s;
     text-decoration: none;
+    font-size: 0.95rem;
 }
 
 .button:hover, button:hover {
@@ -96,12 +99,20 @@ h2 {
     border-radius: 50%;
     width: 45px;
     height: 45px;
+    z-index: 999;
 }
 
 /* Animations */
 @keyframes fadeIn {
-    from {opacity: 0; transform: translateY(10px);}
-    to {opacity: 1; transform: translateY(0);}
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Lists */
@@ -111,6 +122,37 @@ ul {
 
 li {
     margin: 6px 0;
+}
+
+/* Pricing spacing */
+.price-box {
+    margin-bottom: 25px;
+}
+
+/* Mobile support */
+@media (max-width: 700px) {
+
+    .container {
+        padding: 14px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .button,
+    button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .audio-bar {
+        flex-direction: column;
+    }
 }
 </style>
 
@@ -122,58 +164,157 @@ li {
 
 <div class="container">
 
+<!-- Accessibility -->
 <div class="card audio-bar">
     <button onclick="readPage()">🔊 Listen</button>
     <button onclick="pauseReading()">⏸ Pause</button>
     <button onclick="resumeReading()">▶ Resume</button>
     <button onclick="stopReading()">⏹ Stop</button>
-    <span class="audio-label">Accessibility reader</span>
+
+    <span class="audio-label">
+        Accessibility reader
+    </span>
 </div>
 
+<!-- Hero -->
 <div class="card">
+
     <h1>💙 Bluey's Avatar Commissions</h1>
-    <p style="text-align:center; opacity:0.8">
+
+    <p style="text-align:center; opacity:0.8;">
         VRChat Avatar Edits • Customisation • Unity Setup
     </p>
 
     <div style="text-align:center; margin-top:15px;">
-        <a class="button" href="#contact">✨ Commission Me</a>
+        <a class="button" href="#contact">
+            ✨ Commission Me
+        </a>
     </div>
+
 </div>
 
+<!-- About -->
 <div class="card">
+
     <h2>🐾 About</h2>
+
     <p>
         I'm <strong>Bluey</strong>, a VRChat avatar creator with around
         <strong>2 years experience</strong> working with Unity avatars.
-        I focus on clean, performance-friendly avatars made for everyday VRChat use.
     </p>
+
+    <p>
+        I focus on clean, performance-friendly avatars made for
+        everyday VRChat use while keeping avatars looking unique,
+        expressive, and fun.
+    </p>
+
 </div>
 
+<!-- Pricing -->
 <div class="card">
+
     <h2>💸 Pricing</h2>
-    <ul>
-        <li><strong>Touch Ups</strong> — £15-£25</li>
-        <li><strong>Customisation</strong> — £30-£55</li>
-        <li><strong>Avatar Overhaul</strong> — £60-£90</li>
-    </ul>
+
+    <p style="opacity:0.8;">
+        Prices may vary depending on avatar complexity,
+        optimisation work, and assets used.
+    </p>
+
+    <!-- Light Work -->
+    <div class="price-box">
+
+        <h3>✨ Light Blender Work — £15-£25</h3>
+
+        <p>
+            Small edits and simple additions.
+        </p>
+
+        <ul>
+            <li>Easy asset additions</li>
+            <li>Custom jewellery</li>
+            <li>Simple clothing fitting</li>
+            <li>Texture recolours</li>
+            <li>Minor fixes</li>
+            <li>Small accessory setup</li>
+        </ul>
+
+    </div>
+
+    <!-- Customisation -->
+    <div class="price-box">
+
+        <h3>🛠 Avatar Customisation — £30-£55</h3>
+
+        <p>
+            More advanced avatar edits and personalisation.
+        </p>
+
+        <ul>
+            <li>Multiple assets added</li>
+            <li>Advanced clothing fitting</li>
+            <li>Hair edits and combinations</li>
+            <li>Toggles setup</li>
+            <li>Material adjustments</li>
+            <li>Basic optimisation work</li>
+            <li>Unity setup and testing</li>
+        </ul>
+
+    </div>
+
+    <!-- Overhaul -->
+    <div class="price-box">
+
+        <h3>🔥 Avatar Overhaul — £60-£90</h3>
+
+        <p>
+            Large-scale edits and major avatar changes.
+        </p>
+
+        <ul>
+            <li>Heavy avatar restructuring</li>
+            <li>Complete style redesigns</li>
+            <li>Large asset integration</li>
+            <li>Advanced toggle systems</li>
+            <li>Extensive Blender work</li>
+            <li>Performance optimisation</li>
+            <li>Full Unity preparation</li>
+        </ul>
+
+    </div>
+
+    <p style="opacity:0.7;">
+        Unsure what category your commission fits into?
+        Feel free to message me first.
+    </p>
+
 </div>
 
+<!-- Rules -->
 <div class="card">
+
     <h2>⚠️ Content Rules</h2>
+
     <ul>
         <li>SFW by default</li>
         <li>Limited NSFW commissions (case-by-case)</li>
         <li>See NSFW page for full details</li>
     </ul>
 
-    <a class="button secondary" href="nsfw.html">🔞 NSFW Rules</a>
+    <a class="button secondary" href="nsfw.html">
+        🔞 NSFW Rules
+    </a>
+
 </div>
 
+<!-- Contact -->
 <div class="card" id="contact">
+
     <h2>💬 Contact</h2>
 
-    <p><strong>Discord:</strong> BlueyBarks</p>
+    <p>
+        <strong>Discord:</strong> BlueyBarks
+    </p>
 
     <ul>
         <li>What you want done</li>
@@ -182,7 +323,10 @@ li {
         <li>Required assets provided</li>
     </ul>
 
-    <a class="button secondary" href="tos.html">📄 Terms of Service</a>
+    <a class="button secondary" href="tos.html">
+        📄 Terms of Service
+    </a>
+
 </div>
 
 </div>
@@ -190,31 +334,50 @@ li {
 <script>
 let speech;
 
-function readPage(){
+function readPage() {
+
     stopReading();
+
     const text = document.querySelector(".container").innerText;
+
     speech = new SpeechSynthesisUtterance(text);
+
     speech.rate = 1;
     speech.pitch = 1;
+
     window.speechSynthesis.speak(speech);
 }
 
-function pauseReading(){ window.speechSynthesis.pause(); }
-function resumeReading(){ window.speechSynthesis.resume(); }
-function stopReading(){ window.speechSynthesis.cancel(); }
+function pauseReading() {
+    window.speechSynthesis.pause();
+}
 
-function toggleDark(){
+function resumeReading() {
+    window.speechSynthesis.resume();
+}
+
+function stopReading() {
+    window.speechSynthesis.cancel();
+}
+
+function toggleDark() {
+
     document.body.classList.toggle("dark");
+
     localStorage.setItem(
         "theme",
-        document.body.classList.contains("dark") ? "dark" : "light"
+        document.body.classList.contains("dark")
+        ? "dark"
+        : "light"
     );
 }
 
 window.onload = () => {
-    if(localStorage.getItem("theme") === "dark"){
+
+    if(localStorage.getItem("theme") === "dark") {
         document.body.classList.add("dark");
     }
+
 }
 </script>
 
